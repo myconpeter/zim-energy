@@ -22,7 +22,7 @@
      rel="stylesheet" 
      href="css/main.css"
     />
-    <title>Zim-Energy - machines</title>
+    <title>Zim-Energy - Transaction History</title>
   </head>
   <body class="text-gray-800 antialiased">
     <nav class="relative mb-24  bg-brightYellow">
@@ -74,141 +74,88 @@
     
        </nav>
     <main>
+
+      
        
-      <section class="bg-white">
-        <div class="item-center text-center">
-            <a        href="#"
-                  class="bg-brightYellow text-black active:bg-darkYellow text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                  type="button"
-                  style="transition: all 0.15s ease 0s;"
-                >
-                Go Back
-      </a>
+      <section id="Transaction">
+        <div class="text-center w-full">
+      <a        href="#"
+        class="bg-brightYellow text-black active:bg-darkYellow text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+        type="button"
+        style="transition: all 0.15s ease 0s;"
+      >
+      Go Back
+    </a>
         </div>
         
-
         <div class="flex flex-wrap justify-center text-center mb-4">
-          <div class="w-full lg:w-6/12 px-8">
-            <h2 class="text-4xl font-semibold text-black">Products and Services</h2>
+         
+          <div class="w-full lg:w-6/12 px-4">
+            <h2 class="text-4xl font-semibold text-black">Latest Transactions</h2>
              
            
           </div>
         </div>
-        <div class="flex flex-wrap justify-end text-right mb-12 mx-6">
-          
-        </div>
-    
-      <div class="flex flex-wrap items-center justify-center">
-    
-    
-      <div class="w-full p-2 m-auto shadow-lg ">
-        <div class="bg-white flex flex-row  ">
-            <div class="w-36">
-                <img src="./assets/img/product7.jpg" alt="adidas" class="rounded-2xl p-4 m-auto h-36"/>
-
-            </div>
-            <div class="mt-6">
-                <p class="text-base font-bold text-black ">
-                    ZE-kw449max
-                </p>
-                <p class="text-black text-left">
-                    ₦ 500,000
-                </p>
-            </div>
-          
-        </div>
-
-        <div class="flex flex-col bg-brightYellow rounded-2xl"> 
-            <div class=" flex flex-row mx-6 my-4">
-              <div class="w-1/2">
-                <p>
-                    Daily income: ₦ 17,500
-                 
-              </p>
-              </div>
-                
-              
-
-                <div class="">
-                  <p class="">
-                    Total income: ₦ 612,500
-                </p>
-                </div>
-              </div>
-                
-           
-              <div class=" flex flex-row mx-6 my-4">
-                <div class="w-1/2">
-                  <p>
-                    Hold duration: 30 days
-                   
-                </p>
-                </div>
-                  
-                
   
-                  <div class="">
-                    <p class="">
-                      Total return rate: 16%
-                  </p>
-                  </div>
-                </div>
-
+        <div class="flex flex-wrap justify-end text-right mb-12 mx-6">
+         
         </div>
-        <div class="item-center my-4 text-center">
-          <a        href="#"
-                class="bg-lightGreen text-black active:bg-darkYellow text-sm font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                type="button"
-                style="transition: all 0.15s ease 0s;"
-              >
-             Purchase for 30 days
-    </a>
-      </div>
-
-
-
-        <div class="p-4 m-3  rounded-lg">
-            <p class="text-base text-black">
-                As the world’s best manufacturer for construction and mining equipment,
-                 it's provides high-quality generator sets. The company sells both solar powered
-                  (7kW to 16,200kW) and generators (9kW-600kW) to many countries globally.
-
-
-
-             
-               
-             </p>
-
-             <p class="text-base text-black my-2">
-                ZE-kW369 (60,000), cycle 34 days, daily income N3000, total income N102,000
-
-
-                
-              
-               </p>
-               <p class="text-base text-black my-2">
-                [It means that the principal can be earned back in 13 days, and the remaining 21 days are net income]
-
-               </p>
-               
-             </p>
-           
-            <br/>
-            <div class="flex flex-col justify-between text-xs ">
-                
-            
-                
-               
+        
+        <div class="flex flex-col">
+          <div class="overflow-x-auto sm:-mx-6 lg:mx-6">
+            <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+              <div class="overflow-hidden">
+                <table class="min-w-full text-center text-sm font-light">
+                  <thead
+                    class="border-b bg-neutral-800 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900">
+                    <tr>
+                      <th scope="col" class=" px-6 py-4">Date</th>
+                      <th scope="col" class=" px-6 py-4">Amount(NGN)</th>
+                      <th scope="col" class=" px-6 py-4">Progress Status</th>
+                      <th scope="col" class=" px-6 py-4">Transaction ID</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b dark:border-neutral-500">
+                      <div class="flex flex-col">
+                        <td class="whitespace-nowrap  px-6 py-4 font-medium">10 feb 2023<p>18:45 PM</p></td>
+                       
+                      </div>
+                     
+                      <td class="whitespace-nowrap  px-6 py-4">76,000</td>
+                     
+                      <td class="whitespace-nowrap  px-6 py-4">
+                        <button class="bg-green-500 rounded-full w-5">&nbsp;</button>
+                        Confirmed  </td>
+                      <td class="whitespace-nowrap  px-6 py-4">ZE100000000000000004</td>
+                    </tr>
+                    <tr class="border-b dark:border-neutral-500">
+                      <div class="flex flex-col">
+                        <td class="whitespace-nowrap  px-6 py-4 font-medium">10 feb 2023<p>18:45 PM</p></td>
+                       
+                      </div>
+                     
+                      <td class="whitespace-nowrap  px-6 py-4">76,000</td>
+                     
+                      <td class="whitespace-nowrap  px-6 py-4">
+                        <button class="bg-red-500 rounded-full w-5">&nbsp;</button>
+                        Rejected  
+                      </td>
+                      <td class="whitespace-nowrap  px-6 py-4">ZE100000000000000004</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-    
-    
-    
-    
-    
-          </div>    
-        </section>
+        <div class="mb-4">
+          <h2 class="text-center text-3xl">
+            No Transaction Yet...
+          </h2>
+         
+        </div>
+      </section>
             
 
     </main>

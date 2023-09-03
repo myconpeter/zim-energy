@@ -8,3 +8,19 @@ btn.addEventListener('click', ()=>{
     nav.classList.toggle('hidden')
 
 })
+
+
+// Initialization for ES Users
+const myExample = document.getElementById("myExample");
+const alertInstance = te.Alert.getInstance(
+  document.getElementById("container-example")
+);
+
+myExample.addEventListener("copy.te.clipboard", () => {
+  myExample.innerText = "Copied!";
+  alertInstance.show();
+
+  setTimeout(() => {
+    myExample.innerText = "COPY";
+  }, 4000);
+});
