@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/img/apple-icon.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css"
+    />
+    <link
+     rel="stylesheet" 
+     href="stylesheets/style.css"
+    />
+    <title>Home</title>
+  </head>
+  <body class="text-gray-800 antialiased">
+    <nav class="relative">
+      <!-- Flex -->
+     
+      <div class="flex item-center justify-between">
+          <!-- image -->
+          <div class="flex flex-col">
+              <div class="flex flex-auto">
+                  <img src="/img/logo.jpg" class="w-5 h-5  mt-4 ml-6" alt="">
+              <a class="text-3xl mx-2 inline-block mr-4 py-2 whitespace-nowrap text-black">
+                  Zim energy
+              </a>
+              </div>
+              
+          </div>
+          <div class="hidden md:flex space-x-6 py-2 md:mx-6">
+              <a href="#" class="hover:text-darkGreyishBlue">Home</a>
+              <a href="#" class="hover:text-darkGreyishBlue">About</a>
+              <a href="#" class="hover:text-darkGreyishBlue">Epic</a>
+              <a href="#" class="hover:text-darkGreyishBlue">Team</a>
+              <a href="#" class="hover:text-darkGreyishBlue">Profile</a>
+          </div>
+          <!-- button -->
+          <!-- <a href="#" class="hidden  md:block h-10 p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight">
+              Get Started
+          </a> -->
+  
+          <!-- Hamburger icon -->
+          <button id="menu-btn" class="block hamburger my-6 mx-6 md:hidden focus:outline-none">
+              <span class="hamburger-top"></span>
+              <span class="hamburger-middle"></span>
+              <span class="hamburger-bottom"></span>
+          </button>
+  
+      </div>
+      <!-- Mobile menu -->
+          <div class="md:hidden">
+              <div id="menu" class="relative hidden flex-col items-center self-end py-8 mt-10 space-y-5 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
+                  <a href="#">Home</a>
+                  <a href="#">Pricing</a>
+                  <a href="#">Product</a>
+                  <a href="#">About us</a>
+                  <a href="#">Communuity</a>
+                  
+                  
+              </div>
+          </div>
+  
+     </nav>
+    <main>
+        <div
+        class="relative pt-16 pb-32 flex content-center items-center justify-center"
+        style="min-height: 75vh;"
+      >
+        <div
+          class="absolute top-0 w-full h-full bg-center"
+          style='background-image: url("/img/bg.jpg");'
+        >
+          <span
+            id="blackOverlay"
+            class="w-full h-full absolute opacity-75 bg-black"
+          ></span>
+        </div>
+        <div class="container relative mx-auto">
+          <div class="items-center flex flex-wrap">
+            <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
+              <div class="pr-12">
+                <h1 class="text-white font-semibold text-5xl">
+                   Zim Energy
+                </h1>
+                <p class="mt-4 text-lg text-gray-300">
+                  ZIM ENERGY’s technological and manufacturing leadership in energetic
+                  welfare, cells and modules underscores our commitment to helping 
+                  accelerate the income energy transition.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
+          style="height: 70px;"
+        >
+          <svg
+            class="absolute bottom-0 overflow-hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="none"
+            version="1.1"
+            viewBox="0 0 2560 100"
+            x="0"
+            y="0"
+          >
+            <polygon
+              class="text-gray-300 fill-current"
+              points="2560 0 2560 100 0 100"
+            ></polygon>
+          </svg>
+        </div>
+      </div>
+      <section class="pb-20 bg-white -mt-24">
+        <div class="container mx-auto px-4">
+          <div class="flex flex-wrap">
+           
+            <div class="w-full md:w-4/12 px-4 text-center">
+             
+            </div>
+            <div class="pt-6 w-full md:w-4/12 px-4 text-center">
+              <div
+                class="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg"
+              >
+                <div class="px-4 py-5 flex-auto">
+                  <div
+                    class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-green-400"
+                  >
+                    <i class="fas fa-fingerprint"></i>
+                  </div>
+                  <h6 class="text-xl font-semibold">Industry & Applications
+                  </h6>
+                  <p class="mt-2 mb-4 text-gray-600">
+                    
+                    In addition to a wide variety of standard industrial Zim Energy products, 
+                    our custom engineered specialty flanged inline solutions are used for research, 
+                    testing, and other  high energetic-temperature applications throughout the heating 
+                    space, aviation, defense, and automotive industries.
+                  </p>
+                </div>
+               
+              </div>
+              <div class="text-center mt-6">
+                <button
+                  class="bg-brightYellow text-black active:bg-darkYellow text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                  type="button"
+                  style="transition: all 0.15s ease 0s;"
+                >
+                Learn more
+                </button>
+              </div>
+              
+            </div>
+          </div>
+         </div>
+      </section>
+
+      
+<section class="bg-white">
+  <div class="container grid grid-cols-1 gap-8 py-8 mx-auto text-center md:grid-cols-3">
+      <div>
+          <h5 class="text-5xl font-bold text-black">
+              <span class="inline text-black">
+                  16
+              </span>
+              <span class="text-black">
+                  +
+              </span>
+          </h5>
+          <p class="text-xs font-medium tracking-wide text-black uppercase">
+              Referrals
+          </p>
+      </div>
+      <div>
+          <h5 class="text-5xl font-bold text-black">
+              <span class="inline text-black">
+                  24
+              </span>
+              <span class="text-black">
+                  +
+              </span>
+          </h5>
+          <p class="text-xs font-medium tracking-wide text-black uppercase">
+              Income
+          </p>
+      </div>
+      <div>
+          <h5 class="text-5xl font-bold text-black">
+              <span class="inline text-black">
+                  1
+              </span>
+              <span class="text-black">
+                  +
+              </span>
+          </h5>
+          <p class="text-xs font-medium tracking-wide text-black uppercase">
+              investment
+          </p>
+      </div>
+      
+    </div>
+    <!--  -->
+  </section>
+  <hr>
+  <br>
+  <section class="bg-white">
+
+    <div class="flex flex-wrap justify-center text-center mb-4">
+      <div class="w-full lg:w-6/12 px-4">
+        <h2 class="text-4xl font-semibold text-black">Products and Services</h2>
+         
+       
+      </div>
+    </div>
+    <div class="flex flex-wrap justify-end text-right mb-12 mx-6">
+      <div class="">
+        <a class="text-brightYellow" href="#"> See More ..</a>
+
+      </div>
+    </div>
+
+  <div class="flex flex-wrap items-center justify-center">
+
+
+  <div class="w-64 p-2 m-auto shadow-lg ">
+    <div class="bg-gray-300 w-full">
+      <img src="/img/product1.jpg" alt="adidas" class="rounded-2xl p-4 m-auto h-36"/>
+    </div>
+    <div class="p-4 m-3  rounded-lg">
+        <p class="text-xl font-bold text-black ">
+          ZE-7kw
+        </p>
+        <p class="text-xs text-black">
+           As the world’s best manufacturer for construction and mining equipment, it's provides  
+           <a class="text-brightYellow" href="#">Read more</a>
+          
+        </p>
+        <br/>
+        <div class="flex flex-col justify-between text-xs ">
+            <p class="text-black text-left">
+                ₦ 4,000
+            </p>
+         <hr>
+          
+          <p class="text-black text-xs">
+               Day income: 350
+            </p>
+            
+           
+        </div>
+    </div>
+</div>
+
+<div class="w-64 p-2 m-auto shadow-lg ">
+  <div class="bg-gray-300 w-full">
+    <img src="/img/product2.jpg" alt="adidas" class="rounded-2xl p-4 m-auto h-36"/>
+  </div>
+  <div class="p-4 m-3  rounded-lg">
+      <p class="text-xl font-bold text-black ">
+        ZE-2.5kw 
+      </p>
+      <p class="text-xs text-black">
+        Cummins is one of the best international companies that designs and manufactures power
+         <a class="text-brightYellow" href="#">Read more</a>
+        
+      </p>
+      <br/>
+      <div class="flex flex-col justify-between text-xs ">
+          <p class="text-black text-left">
+              ₦ 10,000
+          </p>
+       <hr>
+        
+        <p class="text-black text-xs">
+             Day income: 750
+          </p>
+          
+         
+      </div>
+  </div>
+</div>
+
+<div class="w-64 p-2 m-auto shadow-lg ">
+  <div class="bg-gray-300 w-full">
+    <img src="/img/product3.jpg" alt="adidas" class="rounded-2xl p-4 m-auto h-36"/>
+  </div>
+  <div class="p-4 m-3  rounded-lg">
+      <p class="text-xl font-bold text-black ">
+        ZE-56kw  
+      </p>
+      <p class="text-xs text-black">
+        As a principal supplier of standalone power generation equipment in the U.S. market, High Power Systems    
+            <a class="text-brightYellow" href="#">Read more</a>
+        
+      </p>
+      <br/>
+      <div class="flex flex-col justify-between text-xs ">
+          <p class="text-black text-left">
+              ₦ 15,000
+          </p>
+       <hr>
+        
+        <p class="text-black text-xs">
+             Day income: 900
+          </p>
+          
+         
+      </div>
+  </div>
+</div>
+
+<div class="w-64 p-2 m-auto shadow-lg ">
+  <div class="bg-gray-300 w-full">
+    <img src="/img/product4.jpg" alt="adidas" class="rounded-2xl p-4 m-auto h-36"/>
+  </div>
+  <div class="p-4 m-3  rounded-lg">
+      <p class="text-xl font-bold text-black ">
+        ZE-KW109  
+      </p>
+      <p class="text-xs text-black">
+        As the world’s best manufacturer for construction and mining equipment, it's provides high-quality         <a class="text-brightYellow" href="#">Read more</a>
+        
+      </p>
+      <br/>
+      <div class="flex flex-col justify-between text-xs ">
+          <p class="text-black text-left">
+              ₦ 25,000
+          </p>
+       <hr>
+        
+        <p class="text-black text-xs">
+             Day income: 1,200
+          </p>
+          
+         
+      </div>
+  </div>
+</div>
+
+      </div>    
+    </section>
+    
+    <!-- TRANSACTION FOR THE USER -->
+<br />
+    <section id="Transaction">
+      <div class="flex flex-wrap justify-center text-center mb-4">
+        <div class="w-full lg:w-6/12 px-4">
+          <h2 class="text-4xl font-semibold text-black">Latest Transactions</h2>
+           
+         
+        </div>
+      </div>
+
+      <div class="flex flex-wrap justify-end text-right mb-12 mx-6">
+        <div class="">
+          <a class="text-brightYellow" href="#"> See More ..</a>
+  
+        </div>
+      </div>
+      
+      <div class="flex flex-col">
+        <div class="overflow-x-auto sm:-mx-6 lg:mx-6">
+          <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+            <div class="overflow-hidden">
+              <table class="min-w-full text-center text-sm font-light">
+                <thead
+                  class="border-b bg-neutral-800 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900">
+                  <tr>
+                    <th scope="col" class=" px-6 py-4">Date</th>
+                    <th scope="col" class=" px-6 py-4">Amount(NGN)</th>
+                    <th scope="col" class=" px-6 py-4">Progress Status</th>
+                    <th scope="col" class=" px-6 py-4">Transaction ID</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b dark:border-neutral-500">
+                    <div class="flex flex-col">
+                      <td class="whitespace-nowrap  px-6 py-4 font-medium">10 feb 2023<p>18:45 PM</p></td>
+                     
+                    </div>
+                   
+                    <td class="whitespace-nowrap  px-6 py-4">76,000</td>
+                   
+                    <td class="whitespace-nowrap  px-6 py-4">
+                      <button class="bg-green-500 rounded-full w-5">&nbsp;</button>
+                      Confirmed  </td>
+                    <td class="whitespace-nowrap  px-6 py-4">ZE100000000000000004</td>
+                  </tr>
+                  <tr class="border-b dark:border-neutral-500">
+                    <div class="flex flex-col">
+                      <td class="whitespace-nowrap  px-6 py-4 font-medium">10 feb 2023<p>18:45 PM</p></td>
+                     
+                    </div>
+                   
+                    <td class="whitespace-nowrap  px-6 py-4">76,000</td>
+                   
+                    <td class="whitespace-nowrap  px-6 py-4">
+                      <button class="bg-red-500 rounded-full w-5">&nbsp;</button>
+                      Rejected  
+                    </td>
+                    <td class="whitespace-nowrap  px-6 py-4">ZE100000000000000004</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mb-4">
+        <h2 class="text-center text-3xl">
+          No Transaction Yet...
+        </h2>
+       
+      </div>
+    </section>
+
+    <br>
+      
+      
+    </main>
+    <footer class="relative bg-gray-300 pt-8 pb-6">
+      <div
+        class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
+        style="height: 80px;"
+      >
+        <svg
+          class="absolute bottom-0 overflow-hidden"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          version="1.1"
+          viewBox="0 0 2560 100"
+          x="0"
+          y="0"
+        >
+          <polygon
+            class="text-gray-300 fill-current"
+            points="2560 0 2560 100 0 100"
+          ></polygon>
+        </svg>
+      </div>
+      <div class="container mx-auto px-4">
+        <div class="flex flex-wrap">
+          <div class="w-full lg:w-6/12 px-4">
+            <h4 class="text-3xl font-semibold">Let's keep in touch!</h4>
+            <h5 class="text-lg mt-0 mb-2 text-gray-700">
+              Find us on any of these platforms, we respond very fast.
+            </h5>
+            <div class="mt-6">
+              <button
+                class="bg-white text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
+                type="button"
+              >
+                <i class="flex fab fa-telegram"></i></button
+              >
+            </div>
+          </div>
+          <div class="w-full lg:w-6/12 px-4">
+            <div class="flex flex-wrap items-top mb-6">
+              <div class="w-full lg:w-4/12 px-4 ml-auto">
+                <span
+                  class="block uppercase text-gray-600 text-sm font-semibold mb-2"
+                  >Useful Links</span
+                >
+                <ul class="list-unstyled">
+                  <li>
+                    <a
+                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                      href="#"
+                      >About Us</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                      href="#"
+                      >Product</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                      href="#"
+                      >Epic</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                      href="#"
+                      >Team</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="w-full lg:w-4/12 px-4">
+                <span
+                  class="block uppercase text-gray-600 text-sm font-semibold mb-2"
+                  >Other Resources</span
+                >
+                <ul class="list-unstyled">
+                  <li>
+                    <a
+                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                      href="#"
+                      >Profile</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                      href="#"
+                      >Terms &amp; Conditions</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                      href="#"
+                      >Privacy Policy</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
+                      href="#"
+                      >Contact Us</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="my-6 border-gray-400" />
+        <div
+          class="flex flex-wrap items-center md:justify-between justify-center"
+        >
+          <div class="w-full md:w-4/12 px-4 mx-auto text-center">
+            <div class="text-sm text-gray-600 font-semibold py-1">
+              Copyright &copy;<script data-cfasync="false" ></script><script>document.write(new Date().getFullYear());</script> All rights reserved 
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script>
+    function toggleNavbar(collapseID) {
+      document.getElementById(collapseID).classList.toggle("hidden");
+      document.getElementById(collapseID).classList.toggle("block");
+    }
+  </script>
+    <script src="javascripts/script.js">
+      
+    </script>
+
+</html>

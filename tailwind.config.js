@@ -1,8 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./*.html"],
+  content: [],
   theme: {
-
     extend: {
       colors: {
         brightYellow: 'hsl(44, 100%, 51%)',
@@ -19,3 +18,4 @@ module.exports = {
   },
   plugins: [],
 }
+
