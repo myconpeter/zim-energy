@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const {ensureAuthenticated} = require('../config/auth');
+
 
 // machine 3 get
 
-router.get('/machine3', (req, res, next) => {
+router.get('/machine3',ensureAuthenticated, (req, res, next) => {
     res.render('machine3');
   });
 
@@ -11,7 +13,7 @@ router.get('/machine3', (req, res, next) => {
 
 // machine 4 get
 
-router.get('/machine4', (req, res, next) => {
+router.get('/machine4',ensureAuthenticated, (req, res, next) => {
     res.render('machine4');
   });
 

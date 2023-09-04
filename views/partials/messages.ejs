@@ -1,0 +1,16 @@
+<% if(typeof errors!= 'undefined') { %>
+<%    errors.forEach((error) => { %>
+        <p class="text-red-400 font-bold border-1 bg-white"> <%= error.msg %></p>
+<%    })        %>
+<% } %>
+
+<% if(success_msg!= '') { %>
+        <p class="text-green-400 font-bold border-1 bg-white" ><%=success_msg %> </p>
+      <% } %>
+
+<% if(error_msg != '') { %>
+      <p class="text-green-400 font-bold border-1 bg-white" ><%= error_msg %></p> 
+      <% } %> 
+<% if(error != '') { %>
+       <p class="text-green-400 font-bold border-1 bg-white" ><%= error %> </p>
+      <% } %> 

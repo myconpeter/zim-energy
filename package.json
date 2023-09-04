@@ -8,12 +8,16 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.15",
-    "cookie-parser": "~1.4.4",
+    "bcrypt": "^5.1.1",
+    "connect-flash": "^0.1.1",
     "debug": "~2.6.9",
-    "ejs": "~2.6.1",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "morgan": "~1.9.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mongoose": "^7.5.0",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^8.0.0",
     "request": "^2.88.2"
   },
   "devDependencies": {

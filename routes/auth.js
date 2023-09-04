@@ -1,5 +1,13 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
+const passport = require ("passport");
+const bcrypt = require('bcrypt');
+const User = require("../models/user");
+const request = require("request");
+const { response } = require("express");
+const registerUser = require('../config/registerUser'); // Import the registration function
+
+
 
 
 //login get
@@ -11,6 +19,14 @@ router.get('/login', (req, res, next)=>{
 
 //login post
 
+router.post('/login', (req, res, next)=>{
+  passport.authenticate('userLocal',{
+      successRedirect : '/',
+      failureRedirect: '/login',
+      failureFlash : true
+  })(req,res,next)
+  })
+
 
 //signup get
 
@@ -21,7 +37,11 @@ router.get('/register', (req, res, next)=>{
 
 // signup post
 
-// get logout
+
+router.post('/register', registerUser);
 
 module.exports = router;
+
+
+
 

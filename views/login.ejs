@@ -42,6 +42,8 @@
       </div>
     </nav>
     <main>
+      <%- include ('./partials/messages') %>
+
       <section class="absolute w-full h-full">
         <div
           class="absolute top-0 w-full h-full bg-gray-300"
@@ -53,35 +55,22 @@
                 class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0"
               >
                 <div class="rounded-t mb-0 px-6 py-6">
-                  <div class="text-center mb-3">
-                    <h6 class="text-black text-sm font-bold">
-                      Log in with
-                    </h6>
-                  </div>
+                  
                   <div class="btn-wrapper text-center">
                    
-                    <button
-                      class="bg-white active:bg-white text-black font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs"
-                      type="button"
-                      style="transition: all 0.15s ease 0s;"
-                    >
-                      <img
-                        alt="..."
-                        class="w-5 mr-1"
-                        src="/img/google.svg"
-                      />Google
-                    </button>
+                    
                   </div>
-                  <hr class="mt-6 border-b-1 border-gray-400" />
                 </div>
                 <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
                   <div class="text-black text-center mb-3 font-bold">
-                    <small>Or log in with credentials</small>
+                    <small>Log In</small>
                   </div>
-                  <form>
+                  <form action="/login" method="POST">
                     <div class="relative w-full mb-3">
                      <input
-                        type="email"
+                     type="email" 
+                     name="email"                      
+                     value="<%= typeof email != 'undefined' ? email : '' %>"
                         class="border-0 px-3 py-3 placeholder-black text-black bg-white rounded text-sm shadow focus:outline-brightYellow focus:ring w-full"
                         placeholder="Email"
                         style="transition: all 0.15s ease 0s;"
@@ -89,7 +78,9 @@
                     </div>
                     <div class="relative w-full mb-3">
                       <input
-                        type="password"
+                      type="password" 
+                      name="password"                      
+                      value="<%= typeof password != 'undefined' ? password : '' %>"
                         class="border-0 px-3 py-3 placeholder-black text-black bg-white rounded text-sm shadow focus:outline-brightYellow focus:ring w-full"
                         placeholder="Password"
                         style="transition: all 0.15s ease 0s;"
@@ -111,7 +102,8 @@
                     <div class="text-center mt-6">
                       <button
                         class="bg-brightYellow text-black active:bg-brightYellow text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
-                        type="button"
+                        type="submit"
+
                       >
                         Log In
                       </button>
@@ -126,12 +118,13 @@
                     >
                   </div>
                   <div class="text-center mt-6">
-                    <button
+                    <a
+                      href="/register"
                       class="bg-brightYellow text-black text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
                       type="button"
                     >
                       Create new account
-                    </button>
+                  </a>
                   </div>
                 </div>
               </div>
