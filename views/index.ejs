@@ -1,54 +1,5 @@
-<%- include ('./partials/head') %>
+<%- include ('./partials/indexheader') %>
 
-<body class="text-gray-800 antialiased">
-    <nav class="relative">
-      <!-- Flex -->
-     
-      <div class="flex item-center justify-between">
-          <!-- image -->
-          <div class="flex flex-col">
-              <div class="flex flex-auto">
-                  <img src="/img/logo.jpg" class="w-5 h-5  mt-4 ml-6" alt="">
-              <a class="text-3xl mx-2 inline-block mr-4 py-2 whitespace-nowrap text-black">
-                  Zim energy
-              </a>
-              </div>
-              
-          </div>
-          <div class="hidden md:flex space-x-6 py-2 md:mx-6">
-              <a href="#" class="hover:text-darkGreyishBlue">Home</a>
-              <a href="#" class="hover:text-darkGreyishBlue">About</a>
-              <a href="#" class="hover:text-darkGreyishBlue">Epic</a>
-              <a href="#" class="hover:text-darkGreyishBlue">Team</a>
-              <a href="#" class="hover:text-darkGreyishBlue">Profile</a>
-          </div>
-          <!-- button -->
-          <!-- <a href="#" class="hidden  md:block h-10 p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight">
-              Get Started
-          </a> -->
-  
-          <!-- Hamburger icon -->
-          <button id="menu-btn" class="block hamburger my-6 mx-6 md:hidden focus:outline-none">
-              <span class="hamburger-top"></span>
-              <span class="hamburger-middle"></span>
-              <span class="hamburger-bottom"></span>
-          </button>
-  
-      </div>
-      <!-- Mobile menu -->
-          <div class="md:hidden">
-              <div id="menu" class="relative hidden flex-col items-center self-end py-8 mt-10 space-y-5 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
-                  <a href="#">Home</a>
-                  <a href="#">Pricing</a>
-                  <a href="#">Product</a>
-                  <a href="#">About us</a>
-                  <a href="#">Communuity</a>
-                  
-                  
-              </div>
-          </div>
-  
-     </nav>
     <main>
         <div
         class="relative pt-16 pb-32 flex content-center items-center justify-center"
@@ -129,13 +80,14 @@
                
               </div>
               <div class="text-center mt-6">
-                <button
+                <a
+                href="/about"
                   class="bg-brightYellow text-black active:bg-darkYellow text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
                   type="button"
                   style="transition: all 0.15s ease 0s;"
                 >
                 Learn more
-                </button>
+              </a>
               </div>
               
             </div>
@@ -202,7 +154,7 @@
     </div>
     <div class="flex flex-wrap justify-end text-right mb-12 mx-6">
       <div class="">
-        <a class="text-brightYellow" href="#"> See More ..</a>
+        <a class="text-brightYellow" href="/productAndService"> See More ..</a>
 
       </div>
     </div>
@@ -220,7 +172,7 @@
         </p>
         <p class="text-xs text-black">
            As the world’s best manufacturer for construction and mining equipment, it's provides  
-           <a class="text-brightYellow" href="#">Read more</a>
+           <a class="text-brightYellow" href="/productAndService">Read more</a>
           
         </p>
         <br/>
@@ -249,7 +201,7 @@
       </p>
       <p class="text-xs text-black">
         Cummins is one of the best international companies that designs and manufactures power
-         <a class="text-brightYellow" href="#">Read more</a>
+         <a class="text-brightYellow" href="/productAndService">Read more</a>
         
       </p>
       <br/>
@@ -278,7 +230,7 @@
       </p>
       <p class="text-xs text-black">
         As a principal supplier of standalone power generation equipment in the U.S. market, High Power Systems    
-            <a class="text-brightYellow" href="#">Read more</a>
+            <a class="text-brightYellow" href="/productAndService">Read more</a>
         
       </p>
       <br/>
@@ -306,7 +258,8 @@
         ZE-KW109  
       </p>
       <p class="text-xs text-black">
-        As the world’s best manufacturer for construction and mining equipment, it's provides high-quality         <a class="text-brightYellow" href="#">Read more</a>
+        As the world’s best manufacturer for construction and mining equipment, it's provides high-quality 
+                <a class="text-brightYellow" href="/productAndService">Read more</a>
         
       </p>
       <br/>
@@ -330,217 +283,10 @@
     
     <!-- TRANSACTION FOR THE USER -->
 <br />
-    <section id="Transaction">
-      <div class="flex flex-wrap justify-center text-center mb-4">
-        <div class="w-full lg:w-6/12 px-4">
-          <h2 class="text-4xl font-semibold text-black">Latest Transactions</h2>
-           
-         
-        </div>
-      </div>
+   
 
-      <div class="flex flex-wrap justify-end text-right mb-12 mx-6">
-        <div class="">
-          <a class="text-brightYellow" href="#"> See More ..</a>
-  
-        </div>
-      </div>
-      
-      <div class="flex flex-col">
-        <div class="overflow-x-auto sm:-mx-6 lg:mx-6">
-          <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-            <div class="overflow-hidden">
-              <table class="min-w-full text-center text-sm font-light">
-                <thead
-                  class="border-b bg-neutral-800 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900">
-                  <tr>
-                    <th scope="col" class=" px-6 py-4">Date</th>
-                    <th scope="col" class=" px-6 py-4">Amount(NGN)</th>
-                    <th scope="col" class=" px-6 py-4">Progress Status</th>
-                    <th scope="col" class=" px-6 py-4">Transaction ID</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="border-b dark:border-neutral-500">
-                    <div class="flex flex-col">
-                      <td class="whitespace-nowrap  px-6 py-4 font-medium">10 feb 2023<p>18:45 PM</p></td>
-                     
-                    </div>
-                   
-                    <td class="whitespace-nowrap  px-6 py-4">76,000</td>
-                   
-                    <td class="whitespace-nowrap  px-6 py-4">
-                      <button class="bg-green-500 rounded-full w-5">&nbsp;</button>
-                      Confirmed  </td>
-                    <td class="whitespace-nowrap  px-6 py-4">ZE100000000000000004</td>
-                  </tr>
-                  <tr class="border-b dark:border-neutral-500">
-                    <div class="flex flex-col">
-                      <td class="whitespace-nowrap  px-6 py-4 font-medium">10 feb 2023<p>18:45 PM</p></td>
-                     
-                    </div>
-                   
-                    <td class="whitespace-nowrap  px-6 py-4">76,000</td>
-                   
-                    <td class="whitespace-nowrap  px-6 py-4">
-                      <button class="bg-red-500 rounded-full w-5">&nbsp;</button>
-                      Rejected  
-                    </td>
-                    <td class="whitespace-nowrap  px-6 py-4">ZE100000000000000004</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="mb-4">
-        <h2 class="text-center text-3xl">
-          No Transaction Yet...
-        </h2>
-       
-      </div>
-    </section>
-
-    <br>
+    
       
       
-    </main>
-    <footer class="relative bg-gray-300 pt-8 pb-6">
-      <div
-        class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
-        style="height: 80px;"
-      >
-        <svg
-          class="absolute bottom-0 overflow-hidden"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-          version="1.1"
-          viewBox="0 0 2560 100"
-          x="0"
-          y="0"
-        >
-          <polygon
-            class="text-gray-300 fill-current"
-            points="2560 0 2560 100 0 100"
-          ></polygon>
-        </svg>
-      </div>
-      <div class="container mx-auto px-4">
-        <div class="flex flex-wrap">
-          <div class="w-full lg:w-6/12 px-4">
-            <h4 class="text-3xl font-semibold">Let's keep in touch!</h4>
-            <h5 class="text-lg mt-0 mb-2 text-gray-700">
-              Find us on any of these platforms, we respond very fast.
-            </h5>
-            <div class="mt-6">
-              <button
-                class="bg-white text-blue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
-                type="button"
-              >
-                <i class="flex fab fa-telegram"></i></button
-              >
-            </div>
-          </div>
-          <div class="w-full lg:w-6/12 px-4">
-            <div class="flex flex-wrap items-top mb-6">
-              <div class="w-full lg:w-4/12 px-4 ml-auto">
-                <span
-                  class="block uppercase text-gray-600 text-sm font-semibold mb-2"
-                  >Useful Links</span
-                >
-                <ul class="list-unstyled">
-                  <li>
-                    <a
-                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                      href="#"
-                      >About Us</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                      href="#"
-                      >Product</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                      href="#"
-                      >Epic</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                      href="#"
-                      >Team</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div class="w-full lg:w-4/12 px-4">
-                <span
-                  class="block uppercase text-gray-600 text-sm font-semibold mb-2"
-                  >Other Resources</span
-                >
-                <ul class="list-unstyled">
-                  <li>
-                    <a
-                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                      href="#"
-                      >Profile</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                      href="#"
-                      >Terms &amp; Conditions</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                      href="#"
-                      >Privacy Policy</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                      href="#"
-                      >Contact Us</a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr class="my-6 border-gray-400" />
-        <div
-          class="flex flex-wrap items-center md:justify-between justify-center"
-        >
-          <div class="w-full md:w-4/12 px-4 mx-auto text-center">
-            <div class="text-sm text-gray-600 font-semibold py-1">
-              Copyright &copy;<script data-cfasync="false" ></script><script>document.write(new Date().getFullYear());</script> All rights reserved 
+    <%- include ('./partials/indexfooter') %>
 
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </body>
-  <script>
-    function toggleNavbar(collapseID) {
-      document.getElementById(collapseID).classList.toggle("hidden");
-      document.getElementById(collapseID).classList.toggle("block");
-    }
-  </script>
-    <script src="javascripts/script.js">
-      
-    </script>
-
-</html>

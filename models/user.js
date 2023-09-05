@@ -30,29 +30,34 @@ password :{
     required : true
 } ,
 
+////////////////////////////////////////////////////////////////
+refLink :{
+    type  : String,
+    default :"www.zim-energy.com"
+} ,
 
 
-recievedAmount : {
+balance : {
     type: Number, 
     default: 0
     },
 
-availableBalance: {
+assets: {
      type: Number, 
      default: 0
      },
 
-profit: {
+todayIncome: {
         type: Number, 
         default: 0
         },
 
-affliateBonus: {
+teamIncome: {
             type: Number, 
             default: 0
             },
 
-principle: {
+totalIncome: {
          type: Number, 
          default: 0
          },
@@ -65,9 +70,9 @@ principle: {
 
 
 
-investPlans: {
+machineRunning: {
     type :String,
-    default :"No Active Investment"
+    default :"No Active Machine Running"
 },
 
 

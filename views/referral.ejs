@@ -1,83 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <link rel="shortcut icon" href="/img/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="76x76"
-      href="/img/apple-icon.png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css"
-    />
-    <link
-     rel="stylesheet" 
-     href="stylesheets/style.css"
-    />
-    <title>Zim-Energy - Referrals</title>
-  </head>
-  <body class="text-gray-800 antialiased">
-    <nav class="relative mb-24  bg-brightYellow">
-        <!-- Flex -->
-       
-        <div class="flex item-center justify-between">
-            <!-- image -->
-            <div class="flex flex-col">
-                <div class="flex flex-auto">
-                    <img src="/img/logo.jpg" class="w-5 h-5  mt-4 ml-6" alt="">
-                <a class="text-3xl mx-2 inline-block mr-4 py-2 whitespace-nowrap text-black">
-                    Zim energy
-                </a>
-                </div>
-                
-            </div>
-            <div class="hidden md:flex space-x-6 py-2 md:mx-6">
-                <a href="#" class="hover:text-darkGreyishBlue">Home</a>
-                <a href="#" class="hover:text-darkGreyishBlue">About</a>
-                <a href="#" class="hover:text-darkGreyishBlue">Epic</a>
-                <a href="#" class="hover:text-darkGreyishBlue">Team</a>
-                <a href="#" class="hover:text-darkGreyishBlue">Profile</a>
-            </div>
-            <!-- button -->
-            <!-- <a href="#" class="hidden  md:block h-10 p-3 px-6 pt-2 text-white bg-brightRed rounded-full baseline hover:bg-brightRedLight">
-                Get Started
-            </a> -->
-    
-            <!-- Hamburger icon -->
-            <button id="menu-btn" class="block hamburger my-6 mx-6 md:hidden focus:outline-none">
-                <span class="hamburger-top"></span>
-                <span class="hamburger-middle"></span>
-                <span class="hamburger-bottom"></span>
-            </button>
-    
-        </div>
-        <!-- Mobile menu -->
-            <div class="md:hidden">
-                <div id="menu" class="absolute hidden flex-col items-center self-end py-8 mt-10 space-y-5 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
-                    <a href="#">Home</a>
-                    <a href="#">Pricing</a>
-                    <a href="#">Product</a>
-                    <a href="#">About us</a>
-                    <a href="#">Communuity</a>
-                    
-                    
-                </div>
-            </div>
-    
-       </nav>
+<%- include ('./partials/productHeader') %>
+
     <main>
        
       <section class="bg-white">
         <div class="item-center text-center">
-            <a        href="#"
+            <a        href="/profile"
                   class="bg-brightYellow text-black active:bg-darkYellow text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
                   type="button"
                   style="transition: all 0.15s ease 0s;"

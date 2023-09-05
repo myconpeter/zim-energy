@@ -40,6 +40,15 @@ router.get('/register', (req, res, next)=>{
 
 router.post('/register', registerUser);
 
+
+// user sign out
+
+router.get('/logout',(req,res)=>{
+  req.logout();
+  req.flash('success_msg','You have successful logout');
+  res.redirect('/');
+  })
+
 module.exports = router;
 
 

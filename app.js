@@ -101,6 +101,15 @@ app.use((req,res,next)=> {
 
 
 
+    app.use(bodyParser.urlencoded({extended: true}));
+
+
+app.use((req, res, next) => {
+    res.locals.currentUser = req.user;
+    next();
+});
+
+
 
 
 // error handler

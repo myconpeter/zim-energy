@@ -1,62 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <link rel="shortcut icon" href="/img/favicon.ico" />
-    <link
-      rel="apple-touch-icon"
-      sizes="76x76"
-      href="/img/apple-icon.png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css"
-    />
-    <link
-     rel="stylesheet" 
-     href="stylesheets/style.css"
-    />
-    <title>Profile</title>
-  </head>
-  <body>
-    
-    
-<main class="relative h-screen overflow-hidden bg-white">
-    <div class="flex items-start justify-between">
-        
-        <div class="flex flex-col w-full md:space-y-4">
-            
-            <header class="z-40 flex items-center justify-between w-full h-16">
-                <a class="text-4xl font-bold mx-2 inline-block mr-4 py-2 whitespace-nowrap text-black">
-                    Zim energy
-                </a>
-                
-            
-                <div class="block ml-6 lg:hidden">
-                   
-                  
-                </div>
-                <div class="relative z-20 flex flex-col justify-end h-full px-3 md:w-full">
-                    <div class="relative flex items-center justify-end w-full p-1 space-x-4">
-                       
-                        <span class="w-1 h-8 bg-brightYellow rounded-lg">
-                        </span>
-                        <a href="#" class="relative block">
-                            <img alt="profil" src="/img/user.svg" class="mx-auto object-cover rounded-full h-10 w-10 "/>
-                        </a>
-                        <button class="flex items-center text-gray-500 dark:text-white text-md">
-                            Charlie
-                            
-                        </button>
-                    </div>
-                </div>
-            </header>
+<%- include ('./partials/profileHeader') %>
             <div class="h-screen px-4 pb-24 overflow-auto md:px-6">
                 
                 <h2 class="text-gray-400 text-md">
@@ -172,7 +114,7 @@
                         <div class="w-full my-1 bg-brightYellow h-auto">
                             <div class="flex flex-auto">
                                 <img src="/img/currency.svg" class="w-5 h-5  mt-4 ml-6" alt="">
-                            <a href="#" class="text-xl mx-2 inline-block mr-4 py-2 whitespace-nowrap text-black font-serif">
+                            <a href="/recharge" class="text-xl mx-2 inline-block mr-4 py-2 whitespace-nowrap text-black font-serif">
                                 Recharge
                             </a>
                             </div>
@@ -182,7 +124,7 @@
                         <div class="w-full my-1 bg-brightYellow h-auto">
                             <div class="flex flex-auto">
                                 <img src="/img/bank.svg" class="w-5 h-5  mt-4 ml-6" alt="">
-                            <a href="#" class="text-xl mx-2 inline-block mr-4 py-2 whitespace-nowrap text-black font-serif">
+                            <a href="/withdraw" class="text-xl mx-2 inline-block mr-4 py-2 whitespace-nowrap text-black font-serif">
                                 Withdraw
                             </a>
                             </div>
@@ -192,7 +134,7 @@
                         <div class="w-full my-1 bg-brightYellow h-auto">
                             <div class="flex flex-auto">
                                 <img src="/img/transacton.svg" class="w-5 h-5  mt-4 ml-6" alt="">
-                            <a href="#" class="text-xl mx-2 inline-block mr-4 py-2 whitespace-nowrap text-black font-serif">
+                            <a href="/history" class="text-xl mx-2 inline-block mr-4 py-2 whitespace-nowrap text-black font-serif">
                                 Transaction history
                             </a>
                             </div>
@@ -200,7 +142,7 @@
                         <div class="w-full my-1 bg-brightYellow h-auto">
                             <div class="flex flex-auto">
                                 <img src="/img/password.svg" class="w-5 h-5  mt-4 ml-6" alt="">
-                            <a href="#" class="text-xl mx-2 inline-block mr-4 py-2 whitespace-nowrap text-black font-serif">
+                            <a href="/changePassword" class="text-xl mx-2 inline-block mr-4 py-2 whitespace-nowrap text-black font-serif">
                                 Change Password
                             </a>
                             </div>
@@ -208,7 +150,7 @@
                         <div class="w-full my-1 bg-brightYellow h-auto">
                             <div class="flex flex-auto">
                                 <img src="/img/customer.svg" class="w-5 h-5  mt-4 ml-6" alt="">
-                            <a href="#" class="text-xl mx-2 inline-block mr-4 py-2 whitespace-nowrap text-black font-serif">
+                            <a href="/contact" class="text-xl mx-2 inline-block mr-4 py-2 whitespace-nowrap text-black font-serif">
                                 Customer services
                             </a>
                             </div>
@@ -217,7 +159,7 @@
                         <div class="w-full my-1 bg-brightYellow h-auto">
                             <div class="flex flex-auto">
                                 <img src="/img/logout.svg" class="w-5 h-5  mt-4 ml-6" alt="">
-                            <a href="#" class="text-xl mx-2 inline-block mr-4 py-2 whitespace-nowrap text-black font-serif">
+                            <a href="/logout" class="text-xl mx-2 inline-block mr-4 py-2 whitespace-nowrap text-black font-serif">
                                 Log out
                             </a>
                             </div>
