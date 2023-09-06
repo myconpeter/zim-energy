@@ -1,34 +1,63 @@
 <%- include ('./partials/profileHeader') %>
+<%- include ('./partials/messages') %>
+
             <div class="h-screen px-4 pb-24 overflow-auto md:px-6">
                 
                 <h2 class="text-gray-400 text-md">
                     Here&#x27;s what&#x27;s happening with your account today.
                 </h2>
+
                 <div class="flex flex-col items-center w-full my-6 space-y-4 md:space-x-4 md:space-y-0 md:flex-row">
                     <div class="w-full md:w-6/12">
+
                         <div class="relative w-full overflow-hidden bg-white shadow-lg dark:bg-gray-700">
-                            <a href="#" class="block w-full h-full">
+                            <a class="block w-full h-full">
+                                
+
                                 <div class="flex items-center justify-between px-4 py-6 space-x-4">
+                                    <% if(currentUser.hasInvested == true){ %>
+                                        
+                                        
                                     <div class="flex items-center">
                                        
                                         <p class="ml-2 text-2xl font-semibold text-gray-700 border-b border-gray-200 dark:text-white">
-                                            ZE-7kw
+                                            <%= currentUser.machineRunning %> Currently Running
                                         </p>
                                     </div>
                                     <div class="mt-6 text-xl font-bold text-black border-b border-gray-200 md:mt-0 dark:text-white">
-                                        ₦4,000
+                                        <%= currentUser.dailyPay %> 
                                         <span class="text-xs text-gray-400">
-                                            /₦ 10,500
+                                            /
+                                            <%= currentUser.machineReturn %> 
                                         </span>
                                     </div>
+                                    <%  } else { %>
+                                        
+                                        <div class="flex items-center">
+                                       
+                                            <p class="ml-2 text-2xl font-semibold text-gray-700 border-b border-gray-200 dark:text-white">
+                                                No Active Machine Running
+                                            </p>
+                                           
+                                           
+                                        </div>
+                                        <div class="item-center text-center">
+                                            <a        href="/productAndService"
+                                                  class="bg-brightYellow text-black active:bg-darkYellow text-sm font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                                                  type="button"
+                                                  style="transition: all 0.15s ease 0s;"
+                                                >
+                                                Purchase Machine
+                                      </a>
+                                        </div>
+                                        
+                                  <%  } %> 
                                 </div>
-                                <div class="w-full h-3 bg-gray-100">
-                                    <div class="w-2/5 h-full text-xs text-center text-white bg-brightYellow">
-                                    </div>
-                                </div>
+                                
                             </a>
                         </div>
                     </div>
+                  
                     
                 </div>
                 
@@ -36,7 +65,7 @@
                     <div class="w-1/2 flex flex-row items-center justify-between mx-2">
                         <div class="relative w-full px-4 py-6 bg-brightYellow shadow-lg">
                             <p class="text-2xl font-bold text-black">
-                                ₦ 10,500
+                                ₦ <%= currentUser.balance %> 
                             </p>
                             <p class="text-sm text-black">
                                 Balance
@@ -47,7 +76,7 @@
                     <div class="w-1/2 flex flex-row items-center justify-between mx-2">
                         <div class="relative w-full px-4 py-6 bg-brightYellow shadow-lg">
                             <p class="text-2xl font-bold text-black">
-                                ₦ 10,500
+                                ₦ <%= currentUser.withdrawable %> 
                             </p>
                             <p class="text-sm text-black">
                                 Withdraw
@@ -61,7 +90,7 @@
                     <div class="w-1/2 flex flex-row items-center justify-between mx-2">
                         <div class="relative w-full px-4 py-6 bg-brightYellow shadow-lg">
                             <p class="text-2xl font-bold text-black">
-                                ₦ 10,500
+                                ₦ <%= currentUser.todayIncome %> 
                             </p>
                             <p class="text-sm text-black">
                                 Today's Income
@@ -72,7 +101,7 @@
                     <div class="w-1/2 flex flex-row items-center justify-between mx-2">
                         <div class="relative w-full px-4 py-6 bg-brightYellow shadow-lg">
                             <p class="text-2xl font-bold text-black">
-                                ₦ 10,500
+                                ₦ <%= currentUser.assets %> 
                             </p>
                             <p class="text-sm text-black">
                                 Assets
@@ -87,7 +116,7 @@
                     <div class="w-1/2 flex flex-row items-center justify-between mx-2">
                         <div class="relative w-full px-4 py-6 bg-brightYellow shadow-lg">
                             <p class="text-2xl font-bold text-black">
-                                ₦ 10,500
+                                ₦ <%= currentUser.teamIncome %> 
                             </p>
                             <p class="text-sm text-black">
                                 Team Income
@@ -98,7 +127,7 @@
                     <div class="w-1/2 flex flex-row items-center justify-between mx-2">
                         <div class="relative w-full px-4 py-6 bg-brightYellow shadow-lg">
                             <p class="text-2xl font-bold text-black">
-                                ₦ 10,500
+                                ₦ <%= currentUser.totalIncome %> 
                             </p>
                             <p class="text-sm text-black">
                                 Total Income
@@ -126,6 +155,15 @@
                                 <img src="/img/bank.svg" class="w-5 h-5  mt-4 ml-6" alt="">
                             <a href="/withdraw" class="text-xl mx-2 inline-block mr-4 py-2 whitespace-nowrap text-black font-serif">
                                 Withdraw
+                            </a>
+                            </div>
+                        </div>
+
+                        <div class="w-full my-1 bg-brightYellow h-auto">
+                            <div class="flex flex-auto">
+                                <img src="/img/shake.svg" class="w-5 h-5  mt-4 ml-6" alt="">
+                            <a href="/referral" class="text-xl mx-2 inline-block mr-4 py-2 whitespace-nowrap text-black font-serif">
+                                Team
                             </a>
                             </div>
                         </div>

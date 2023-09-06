@@ -42,7 +42,6 @@
       </div>
     </nav>
     <main>
-      <%- include ('./partials/messages') %>
 
       <section class="absolute w-full h-full">
         <div
@@ -55,7 +54,7 @@
                 class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0"
               >
                 <div class="rounded-t mb-0 px-6 py-6">
-                  
+                  <%- include ('./partials/messages') %>
                 </div>
                 <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
                   <div class="text-black text-center mb-3 font-bold">
@@ -104,7 +103,7 @@
                      <input
                      type="tel" 
                         name="telephone"                      
-                        value="<%= typeof tel != 'undefined' ? tel : '' %>"
+                        value="<%= typeof telephone != 'undefined' ? telephone : '' %>"
                         class="border-0 px-3 py-3 placeholder-black text-black bg-white rounded text-sm shadow focus:outline-brightYellow focus:ring w-full"
                         placeholder="Mobile number"
                         style="transition: all 0.15s ease 0s;"
@@ -113,9 +112,13 @@
 
                     <div class="relative w-full mb-3">
                         <input
-                        type="tel" 
-                        name="refcode"                      
-                        value="<%= typeof number != 'undefined' ? number : '' %>"                           class="border-0 px-3 py-3 placeholder-black text-black bg-white rounded text-sm shadow focus:outline-brightYellow focus:ring w-full"
+                        
+                        id="referralCode"
+                        type="text" 
+                        name="referralCode"  
+                        value="<%= typeof referralCode  != 'undefined' ? referralCode : '' %>"                    
+                        
+                        class="border-0 px-3 py-3 placeholder-black text-black bg-white rounded text-sm shadow focus:outline-brightYellow focus:ring w-full"
                            placeholder="Referral code (Optional)" 
                            style="transition: all 0.15s ease 0s;"
                          />
@@ -151,12 +154,13 @@
                     >
                   </div>
                   <div class="text-center mt-6">
-                    <button
+                    <a
+                      href="/login"
                       class="bg-brightYellow text-black text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
                       type="button"
                     >
                       Log in
-                    </button>
+                  </a>
                   </div>
                 </div>
               </div>
@@ -165,9 +169,9 @@
             </div>
           </div>
         </div>
-        <footer class="absolute w-full bottom-0 bg-gray-300 pb-6">
+        <footer class="w-full bottom-0 bg-gray-300 pb-6">
           <div class="container mx-auto px-4">
-            <hr class="mb-6 border-b-1 border-black" />
+            <hr class="pt-3 mb-6 border-b-1 border-black" />
             <div
               class="flex flex-wrap items-center md:justify-between justify-center"
             >
@@ -184,4 +188,14 @@
       </section>
     </main>
   </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const referralCode = urlParams.get('referralCode');
+  
+      if (referralCode) {
+        document.getElementById('referralCode').value = referralCode;
+      }
+    });
+  </script>
 </html>

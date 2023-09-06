@@ -21,16 +21,26 @@ telephone :{
     required : true
 } ,
 
-refcode :{
-    type  : Number,
-    required : true
-} ,
+referralCode :{
+    type  : String,
+    } ,
 password :{
     type  : String,
     required : true
 } ,
 
 ////////////////////////////////////////////////////////////////
+referredBy: {
+    type: String,
+    ref: 'User', // Reference the 'User' model
+  },
+
+hasInvested :{
+    type  : Boolean,
+    default : false
+} ,
+
+
 refLink :{
     type  : String,
     default :"www.zim-energy.com"
@@ -61,23 +71,54 @@ totalIncome: {
          type: Number, 
          default: 0
          },
-
-
-
-
-    
-
-
-
-
+         
+withdrawable: {
+            type: Number, 
+            default: 0
+            },
+   
 machineRunning: {
     type :String,
-    default :"No Active Machine Running"
+    default :"Current machine"
 },
 
+dailyPay: {
+    type :Number,
+    default :"0"
+},
 
+machinePrice: {
+    type :Number,
+    default: 0
+},
 
+machineReturn: {
+    type :Number,
+    default :"0"
+},
 
+boughtMachineDate: {
+    type :Date,
+},
+
+hasBeenReffered: {
+    type :Boolean,
+    default :false
+},
+
+refCodeBonus: {
+    type :Boolean,
+    default : false
+},
+
+refCodeAmount: {
+    type :Number,
+    default : 0
+},
+
+dailyMatureDate: {
+    type: Date,
+},
 
 date :{
     type : Date,

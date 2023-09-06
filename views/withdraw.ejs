@@ -61,7 +61,7 @@
                   <div class="btn-wrapper text-center">
                    
             <a        
-                  href="#"
+                  href="/profile"
                   class="bg-brightYellow text-black active:bg-darkYellow text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
                   type="button"
                   style="transition: all 0.15s ease 0s;"
@@ -77,10 +77,10 @@
                   </div>
                   <div class="text-end">
                     <p class="text-gray-500">
-                      Balance (₦)  0.00
+                      Balance (₦) <%= currentUser.balance %>
                     </p>
                     <p class="text-gray-500">
-                      Withdrawable Balance (₦) 0.00
+                      Withdrawable Balance (₦) <%= currentUser.withdrawable %>
                     </p>
                   </div>
                   
