@@ -6,6 +6,9 @@ const passport = require ('passport');
 const session = require('express-session');
 const flash = require("connect-flash");
 
+const PORT  = process.env.PORT || 8000;
+
+
 const app = express();
 
 //passport config:
@@ -132,4 +135,7 @@ app.get('*', (req, res, next)=>{
 })
 
 
-module.exports = app;
+app.listen(PORT, ()=> {
+  console.log("zim users running");
+});
+
