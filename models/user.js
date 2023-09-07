@@ -79,7 +79,7 @@ withdrawable: {
    
 machineRunning: {
     type :String,
-    default :"Current machine"
+    default :"No machine Running"
 },
 
 dailyPay: {
@@ -123,7 +123,13 @@ dailyMatureDate: {
 date :{
     type : Date,
     default :Date.now()
-}
+},
+
+requestedAmount :{
+    type: Number,
+    default :0
+    
+  }
 
 
 });

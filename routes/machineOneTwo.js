@@ -49,7 +49,7 @@ router.post('/machine1', ensureAuthenticated, async (req, res) => {
         // Check if the referrer has already referred others
         if (!foundRef.hasBeenReferred) {
           // Update the referrer's refCodeAmount and set hasBeenReferred to true
-          foundRef.refCodeAmount = 520;
+          foundRef.refCodeAmount += 520;
           foundRef.hasBeenReferred = true;
           foundRef.refCodeBonus = true;
 

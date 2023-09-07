@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const {ensureAuthenticated} = require('../config/auth');
 const User = require('../models/user');
+const bcrypt = require('bcrypt');
 
 
 // get page
@@ -11,47 +12,41 @@ router.get('/changePassword',ensureAuthenticated, (req, res, next) => {
   
 
 // update password
-router.post('/changePassword', (req, res)=>{
-  var {secret, newpassword }  = req.body
-         let errors =[]
-         if(newpassword.length < 6 ) {
-          errors.push({msg : 'Password atleast 6 characters'})
-          }
-          if(errors.length > 0 ) {
-          res.render('newpassword', {
-              errors : errors,
-              secret : secret,
-              newpassword : newpassword,
-          })
-           } else {
-               User.findOne({secret : secret}, (err, realUser)=>{
-                  if(!realUser){
-                      req.flash('error_msg' , 'WRONG INFORMATION');
-                          res.redirect('/forgetpassword');
-                  } else{
-                      const idd = realUser.id;
-                      bcrypt.genSalt(10,(err,salt)=> 
-                      bcrypt.hash(newpassword,salt,
-                          (err,hash)=> {
-                              if(err) throw err;
-                                  //save pass to hash
-                                  newpassword = hash;
-                                  User.findByIdAndUpdate(idd, {password: newpassword },  function(err, data){
-                                      if(err){
-                                          console.log(err)
-                                      } else {
-                                          req.flash('success_msg','You have successfully reset your password please login!');
-                                          res.redirect('/login')
-                                      }
-                                  }); 
-                                   }));
-                       }
-              })
-            }
-}) ;
 
+router.post('/changePassword', async (req, res) => {
+  const { currentPassword, newPassword, confirmPassword } = req.body;
+  const userId = req.user._id; // Assuming you're using Passport for user authentication
+
+  // Retrieve the user from the database
+  const user = await User.findById(userId);
+
+  // Check if the current password is correct
+  const isPasswordValid = await bcrypt.compare(currentPassword, user.password);
+
+  if (!isPasswordValid) {
+    req.flash('error_msg', 'Incorrect current password');
+    return res.redirect('/changePassword');
+  }
+
+  // Check if the new password and confirmation match
+  if (newPassword !== confirmPassword) {
+    req.flash('error_msg', 'New password and confirmation do not match');
+    return res.redirect('/changePassword');
+  }
+
+  // Hash the new password
+  const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+  // Update the user's password in the database
+  user.password = hashedPassword;
+  await user.save();
+
+  req.flash('success_msg', 'Password changed successfully');
+  res.redirect('/profile'); // Redirect to the user's profile or another appropriate page
+});
 
 module.exports = router;
+
 
 
 

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/img/apple-icon.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css"
+    />
+    <link
+     rel="stylesheet" 
+     href="stylesheets/style.css"
+    />
+
+    <title> Zim - Energy</title>
+  </head>
+  <body class="text-black antialiased">
+    <nav
+      class="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 "
+    >
+      <div
+        class="container px-4 mx-auto flex flex-wrap items-center justify-between"
+      >
+        <div
+          class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start"
+        >
+          
+          
+        </div>
+        
+      </div>
+    </nav>
+    <main>
+
+      <section class="absolute w-full h-full">
+        <div
+          class="absolute top-0 w-full h-full bg-gray-300"
+        ></div>
+        <div class="container mx-auto px-4 h-full">
+          <div class="flex content-center items-center justify-center h-full">
+            <div class="w-full lg:w-4/12 px-4">
+              <div
+                class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0"
+              >
+                <div class="rounded-t mb-0 px-6 py-6">
+                  
+                  <div class="btn-wrapper text-center">
+                    <%- include ('./partials/messages') %>
+
+                    
+                  </div>
+                </div>
+                <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+                  <div class="text-black text-center mb-3 font-bold">
+                    <small>Please make your payment to the account details</small>
+                  </div>
+                  <form action="/accountDetails" method="POST">
+                    <div class="flex flex-row w-full mb-3">
+                        <input
+                        type="text" 
+                                              
+                        value="<%= typeof password != 'undefined' ? password : '' %> 123456"
+                          class="border-0 px-3 py-3 placeholder-black text-black bg-white rounded text-sm shadow focus:outline-brightYellow focus:ring w-full"
+                         
+                          style="transition: all 0.15s ease 0s;"
+                          aria-label="Recipient's username"
+                            aria-describedby="button-addon2"
+                            id="myInput1"
+                        />
+                        <button
+          id="show"
+            class="z-[2] inline-block rounded-r bg-brightYellow px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:z-[3] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+            data-te-ripple-init
+            type="button"
+            onclick="myFunction1()">
+            copy
+          </button>
+          <button
+            id="hide"
+            class="z-[2] hidden inline-block rounded-r bg-lightGreen px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:z-[3] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+            data-te-ripple-init
+            type="button"
+            >
+            copied
+          </button>
+
+                      </div>
+                      <div class="flex flex-row w-full mb-3">
+                        <input
+                        type="text" 
+                                              
+                        value="<%= typeof password != 'undefined' ? password : '' %> micheal"
+                          class="border-0 px-3 py-3 placeholder-black text-black bg-white rounded text-sm shadow focus:outline-brightYellow focus:ring w-full"
+                         
+                          style="transition: all 0.15s ease 0s;"
+                          aria-label="Recipient's username"
+                            aria-describedby="button-addon2"
+                            id="myInput2"
+                        />
+                        <button
+          id="show1"
+            class="z-[2] inline-block rounded-r bg-brightYellow px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:z-[3] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+            data-te-ripple-init
+            type="button"
+            onclick="myFunction2()">
+            copy
+          </button>
+          <button
+            id="hide1"
+            class="z-[2] hidden inline-block rounded-r bg-lightGreen px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:z-[3] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+            data-te-ripple-init
+            type="button"
+            >
+            copied
+          </button>
+
+                      </div>
+
+                    <div class="relative w-full mb-3">
+                        <input
+                        type="text" 
+                                              
+                        value="<%= typeof password != 'undefined' ? password : '' %>   OPAY"
+                          class="border-0 px-3 py-3 placeholder-black text-black bg-white rounded text-sm shadow focus:outline-brightYellow focus:ring w-full"
+                         
+                          style="transition: all 0.15s ease 0s;"
+                        />
+                      </div>
+                      <div class="relative w-full mb-3">
+                        <input
+                        type="text" 
+                        id="depo1"                      
+                        value="₦ <%= currentUser.requestedAmount %> "
+                          class="border-0 px-3 py-3 placeholder-black text-black bg-white rounded text-sm shadow focus:outline-brightYellow focus:ring w-full"
+                         
+                          style="transition: all 0.15s ease 0s;"
+                        />
+                      </div>
+
+                    <div>
+                      
+                    </div>
+                    
+                    <div class="text-center mt-6">
+                      <button
+                        class="bg-brightYellow text-black active:bg-brightYellow text-sm font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
+                        type="submit"
+
+                      >
+                        I have made Payment
+                      </button>
+                    </div>
+                  </form>
+
+                  
+                  <div class="text-center mt-6">
+                    
+                  </div>
+                </div>
+              </div>
+
+              
+            </div>
+          </div>
+        </div>
+        <footer class="absolute w-full bottom-0 bg-gray-300 pb-6">
+          <div class="container mx-auto px-4">
+            <hr class="mb-6 border-b-1 border-black" />
+            <div
+              class="flex flex-wrap items-center md:justify-between justify-center"
+            >
+              <div class="w-full md:w-4/12 px-4">
+                <div class="text-sm text-black font-semibold py-1">
+                    Copyright &copy;<script data-cfasync="false" ></script><script>document.write(new Date().getFullYear());</script> All rights reserved 
+                 
+                </div>
+              </div>
+             
+            </div>
+          </div>
+        </footer>
+      </section>
+    </main>
+  </body>
+
+  <script>
+    function toggleNavbar(collapseID) {
+      document.getElementById(collapseID).classList.toggle("hidden");
+      document.getElementById(collapseID).classList.toggle("block");
+    }
+
+    function myFunction1() {
+  var copyText = document.getElementById("myInput1");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  
+  
+  document.getElementById("show").style.display = "none"; 
+  document.getElementById("hide").style.display = "block"; 
+}
+
+function myFunction2() {
+  var copyText = document.getElementById("myInput2");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999)
+  document.execCommand("copy");
+  
+  
+  document.getElementById("show1").style.display = "none"; 
+  document.getElementById("hide1").style.display = "block"; 
+}
+
+    
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const referralCode = urlParams.get('depo1');
+
+    if (referralCode) {
+      document.getElementById('depo1').value = referralCode;
+    }
+  });
+</script>
+ 
+</html>
