@@ -10,6 +10,72 @@ router.get('/machine7',ensureAuthenticated, (req, res, next) => {
 
 // machine 7 post
 
+router.post('/machine7', ensureAuthenticated, async (req, res) => {
+  try {
+    const userId = Object(req.user.id);
+    const user = await User.findById(userId); // Find the user by ID
+    const price = 500000;
+    if (user.balance < price) {
+      req.flash('error_msg', 'Your Available Balance is too low for this Machine. Please fund your account.');
+      return res.redirect('/profile');
+    }
+    let cronJob;
+    user.balance -= price;
+    user.withdrawable -= price;
+    user.hasInvested = true;
+    user.machineRunning = "ZE-kw449max";
+    user.machinePrice = 500000;
+    user.boughtMachineDate = new Date();   
+    user.machineReturn = 612500;
+cronJob = cron.schedule('* * 24 * * *', async () => {
+      try {
+        const users = await User.findById(userId);
+          if (user.hasInvested) {
+            user.dailyPay += 17500;
+            user.balance +=17500;
+            user.withdrawable +=17500;
+            user.totalIncome +=17500;
+            user.todayIncome =17500;
+            await user.save();
+            if (user.dailyPay >= 612500) {
+              cronJob.stop(); // Stop the cron job
+              user.machineRunning= "No machine"
+              user.dailyPay = 0;
+              user.hasInvested = false;
+          await user.save();
+            }
+          }
+      } catch (err) {      
+      }
+    });
+    await user.save();
+    const bonus = req.user.referralCode;
+    console.log(bonus)
+    if (bonus) {
+      const foundRef = await User.findOne({ username: bonus });
+      
+      if (foundRef) {
+        if (foundRef.hasBeenReferred = false) {
+          foundRef.refCodeAmount = 78000;
+          foundRef.teamIncome +=78000;
+          foundRef.hasBeenReferred = true;
+          foundRef.refCodeBonus = true;
+          foundRef.totalIncome +=78000;
+          foundRef.todayIncome +=78000;
+          foundRef.balance +=78000;
+          await foundRef.save();
+        }
+      }
+    }
+    req.flash('success_msg', 'You have successfully bought an investment plan!');
+    return res.redirect('/profile');
+  } catch (err) {
+    console.error(err);
+    req.flash('error_msg', 'An error occurred during the purchase. Please try again.');
+    return res.redirect('/profile');
+  }
+});
+
 
 
 
