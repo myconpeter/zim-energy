@@ -3,13 +3,13 @@
        
       <section class="bg-white">
         <div class="item-center text-center">
-            <a        href="/productAndService"
+            <a     href="/productAndService" 
                   class="bg-brightYellow text-black active:bg-darkYellow text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                  type="button"
+                  type="button
                   style="transition: all 0.15s ease 0s;"
                 >
                 Go Back
-      </a>
+        </a>
         </div>
         
 
@@ -23,7 +23,7 @@
         <div class="flex flex-wrap justify-end text-right mb-12 mx-6">
           
         </div>
-    
+        <form action="/machine6" method="post">
       <div class="flex flex-wrap items-center justify-center">
     
     
@@ -82,15 +82,25 @@
 
         </div>
         <div class="item-center my-4 text-center">
-          <a        href="#"
-                class="bg-lightGreen text-black active:bg-darkYellow text-sm font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                type="button"
-                style="transition: all 0.15s ease 0s;"
-              >
-             Purchase for 35 days
-    </a>
-      </div>
+          <% if(currentUser.hasInvested == true){ %>
+         <button        href="#"
+               class="disable bg-lightGreen text-black active:bg-darkYellow text-sm font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+               type="button"
+               style="transition: all 0.15s ease 0s;"
+             >
+             <%= currentUser.machineRunning %> Currently Running
+         </button>
+         <%  } else { %>
+         <button        href="#"
+         class="bg-lightGreen text-black active:bg-darkYellow text-sm font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+         type="submit"
+         style="transition: all 0.15s ease 0s;"
+       >
+       Purchase for 30 days
+   </button>
+   <%  } %> 
 
+     </div>
 
 
         <div class="p-4 m-3  rounded-lg">
@@ -136,9 +146,10 @@
     
     
     
-          </div>    
+          </div>   
+        </form>  
         </section>
-            
+        
 
     </main>
 

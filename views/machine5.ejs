@@ -23,6 +23,8 @@
         <div class="flex flex-wrap justify-end text-right mb-12 mx-6">
           
         </div>
+
+        <form action="/machine5" method="post">
     
       <div class="flex flex-wrap items-center justify-center">
     
@@ -82,16 +84,25 @@
 
         </div>
         <div class="item-center my-4 text-center">
-          <a        href="#"
-                class="bg-lightGreen text-black active:bg-darkYellow text-sm font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                type="button"
-                style="transition: all 0.15s ease 0s;"
-              >
-             Purchase for 34 days
-    </a>
-      </div>
+          <% if(currentUser.hasInvested == true){ %>
+         <button        href="#"
+               class="disable bg-lightGreen text-black active:bg-darkYellow text-sm font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+               type="button"
+               style="transition: all 0.15s ease 0s;"
+             >
+             <%= currentUser.machineRunning %> Currently Running
+         </button>
+         <%  } else { %>
+         <button        href="#"
+         class="bg-lightGreen text-black active:bg-darkYellow text-sm font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+         type="submit"
+         style="transition: all 0.15s ease 0s;"
+       >
+       Purchase for 30 days
+   </button>
+   <%  } %> 
 
-
+     </div>
 
         <div class="p-4 m-3  rounded-lg">
             <p class="text-base text-black">
@@ -133,7 +144,8 @@
     
     
     
-          </div>    
+          </div> 
+        </form>   
         </section>
             
 

@@ -1,6 +1,9 @@
 const express = require('express');
+const { ensureAuthenticated } = require('../config/auth');
 const router = express.Router();
-const {ensureAuthenticated} = require('../config/auth');
+const User = require("../models/user");
+const cron = require('node-cron');
+
 
 
 // machine 5 get
@@ -28,7 +31,7 @@ router.post('/machine5', ensureAuthenticated, async (req, res) => {
     user.machinePrice = 60000;
     user.boughtMachineDate = new Date();   
     user.machineReturn = 102000;
-cronJob = cron.schedule('* * 24 * * *', async () => {
+cronJob = cron.schedule('* * 0 * * *', async () => {
       try {
         const users = await User.findById(userId);
           if (user.hasInvested) {
@@ -102,7 +105,7 @@ router.post('/machine6', ensureAuthenticated, async (req, res) => {
     user.machinePrice = 120000;
     user.boughtMachineDate = new Date();   
     user.machineReturn = 175000;
-cronJob = cron.schedule('* * 24 * * *', async () => {
+cronJob = cron.schedule('* * 0 * * *', async () => {
       try {
         const users = await User.findById(userId);
           if (user.hasInvested) {

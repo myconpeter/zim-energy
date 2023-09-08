@@ -23,7 +23,7 @@
         <div class="flex flex-wrap justify-end text-right mb-12 mx-6">
           
         </div>
-    
+        <form action="/machine7" method="post">
       <div class="flex flex-wrap items-center justify-center">
     
     
@@ -82,22 +82,34 @@
 
         </div>
         <div class="item-center my-4 text-center">
-          <a        href="#"
-                class="bg-lightGreen text-black active:bg-darkYellow text-sm font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                type="button"
-                style="transition: all 0.15s ease 0s;"
-              >
-             Purchase for 30 days
-    </a>
-      </div>
+          <% if(currentUser.hasInvested == true){ %>
+         <button        href="#"
+               class="disable bg-lightGreen text-black active:bg-darkYellow text-sm font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+               type="button"
+               style="transition: all 0.15s ease 0s;"
+             >
+             <%= currentUser.machineRunning %> Currently Running
+         </button>
+         <%  } else { %>
+         <button        href="#"
+         class="bg-lightGreen text-black active:bg-darkYellow text-sm font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+         type="submit"
+         style="transition: all 0.15s ease 0s;"
+       >
+       Purchase for 30 days
+   </button>
+   <%  } %> 
+
+     </div>
 
 
 
         <div class="p-4 m-3  rounded-lg">
             <p class="text-base text-black">
-                As the world’s best manufacturer for construction and mining equipment,
-                 it's provides high-quality generator sets. The company sells both solar powered
-                  (7kW to 16,200kW) and generators (9kW-600kW) to many countries globally.
+              As the world’s best manufacturer for construction and mining equipment, 
+              it's provides high-quality generator sets. The company sells both solar powered
+               (7kW to 16,200kW) and generators (9kW-600kW) to many countries globally.
+
 
 
 
@@ -106,14 +118,15 @@
              </p>
 
              <p class="text-base text-black my-2">
-                ZE-kW369 (60,000), cycle 34 days, daily income N3000, total income N102,000
+              ZE-kW449max (500,000), cycle 35 days, daily income 17,500 total income N612,500
+
 
 
                 
               
                </p>
                <p class="text-base text-black my-2">
-                [It means that the principal can be earned back in 13 days, and the remaining 21 days are net income]
+                [It means that the principal can be earned back in 12 days, and the remaining 23 days are net income]
 
                </p>
                
@@ -133,7 +146,9 @@
     
     
     
-          </div>    
+          </div>   
+          
+        </form>
         </section>
             
 

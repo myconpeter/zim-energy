@@ -5,14 +5,14 @@ const User = require("../models/user");
 const cron = require('node-cron');
 
 
-// machine 1 get
 
-router.get('/machine1',ensureAuthenticated, (req, res, next) => {
+// machine 5 get
+
+router.get('/machine1', ensureAuthenticated, (req, res, next) => {
     res.render('machine1');
   });
 
-// machine 1 post
-
+// machine 5 post
 
 router.post('/machine1', ensureAuthenticated, async (req, res) => {
   try {
@@ -28,10 +28,10 @@ router.post('/machine1', ensureAuthenticated, async (req, res) => {
     user.withdrawable -= price;
     user.hasInvested = true;
     user.machineRunning = "ZE-7kw";
-    user.machinePrice = 4000
+    user.machinePrice = 4000;
     user.boughtMachineDate = new Date();   
     user.machineReturn = 10500;
-cronJob = cron.schedule('* * 24 * * *', async () => {
+cronJob = cron.schedule('* * 0 * * *', async () => {
       try {
         const users = await User.findById(userId);
           if (user.hasInvested) {
@@ -80,12 +80,13 @@ cronJob = cron.schedule('* * 24 * * *', async () => {
   }
 });
 
+// machine 6 get
 
+router.get('/machine2', ensureAuthenticated, (req, res, next) => {
+    res.render('machine2');
+  });
 
-
-
-
-// machine 2 get
+// machine 6 post
 
 router.post('/machine2', ensureAuthenticated, async (req, res) => {
   try {
@@ -104,7 +105,7 @@ router.post('/machine2', ensureAuthenticated, async (req, res) => {
     user.machinePrice = 10000;
     user.boughtMachineDate = new Date();   
     user.machineReturn = 23250;
-cronJob = cron.schedule('* * 24 * * *', async () => {
+cronJob = cron.schedule('* * 0 * * *', async () => {
       try {
         const users = await User.findById(userId);
           if (user.hasInvested) {
@@ -152,8 +153,6 @@ cronJob = cron.schedule('* * 24 * * *', async () => {
     return res.redirect('/profile');
   }
 });
-
-// machine 2 post
 
 
 module.exports = router;
