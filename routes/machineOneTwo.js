@@ -46,6 +46,7 @@ cronJob = cron.schedule('* * 0 * * *', async () => {
               user.machineRunning= "No machine"
               user.dailyPay = 0;
               user.hasInvested = false;
+              user.isWithdrawable = true
           await user.save();
             }
           }
@@ -54,22 +55,28 @@ cronJob = cron.schedule('* * 0 * * *', async () => {
     });
     await user.save();
     const bonus = req.user.referralCode;
-    console.log(bonus)
+    
     if (bonus) {
       const foundRef = await User.findOne({ username: bonus });
+      // console.log(foundRef)
       
       if (foundRef) {
-        if (foundRef.hasBeenReferred = false) {
+        if (user.hasBeenReffered == false) {
           foundRef.refCodeAmount = 520;
           foundRef.teamIncome +=520;
-          foundRef.hasBeenReferred = true;
           foundRef.refCodeBonus = true;
           foundRef.totalIncome +=520;
           foundRef.todayIncome +=520;
           foundRef.balance +=520;
+          foundRef.withdrawable +=520;
           await foundRef.save();
         }
       }
+
+      user.hasBeenReffered = true;
+      await user.save();
+
+      
     }
     req.flash('success_msg', 'You have successfully bought an investment plan!');
     return res.redirect('/profile');
@@ -120,6 +127,7 @@ cronJob = cron.schedule('* * 0 * * *', async () => {
               user.machineRunning= "No machine"
               user.dailyPay = 0;
               user.hasInvested = false;
+              user.isWithdrawable = true
           await user.save();
             }
           }
@@ -128,22 +136,28 @@ cronJob = cron.schedule('* * 0 * * *', async () => {
     });
     await user.save();
     const bonus = req.user.referralCode;
-    console.log(bonus)
+    
     if (bonus) {
       const foundRef = await User.findOne({ username: bonus });
+      // console.log(foundRef)
       
       if (foundRef) {
-        if (foundRef.hasBeenReferred = false) {
+        if (user.hasBeenReffered == false) {
           foundRef.refCodeAmount = 1300;
           foundRef.teamIncome +=1300;
-          foundRef.hasBeenReferred = true;
           foundRef.refCodeBonus = true;
           foundRef.totalIncome +=1300;
           foundRef.todayIncome +=1300;
           foundRef.balance +=1300;
+          foundRef.withdrawable +=1300;
           await foundRef.save();
         }
       }
+
+      user.hasBeenReffered = true;
+      await user.save();
+
+      
     }
     req.flash('success_msg', 'You have successfully bought an investment plan!');
     return res.redirect('/profile');

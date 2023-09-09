@@ -25,7 +25,7 @@ router.post('/machine7', ensureAuthenticated, async (req, res) => {
     user.balance -= price;
     user.withdrawable -= price;
     user.hasInvested = true;
-    user.machineRunning = "ZE-kw449max";
+    user.machineRunning = "ZE-2.5kw";
     user.machinePrice = 500000;
     user.boughtMachineDate = new Date();   
     user.machineReturn = 612500;
@@ -44,6 +44,7 @@ cronJob = cron.schedule('* * 0 * * *', async () => {
               user.machineRunning= "No machine"
               user.dailyPay = 0;
               user.hasInvested = false;
+              user.isWithdrawable = true
           await user.save();
             }
           }
@@ -52,22 +53,28 @@ cronJob = cron.schedule('* * 0 * * *', async () => {
     });
     await user.save();
     const bonus = req.user.referralCode;
-    console.log(bonus)
+    
     if (bonus) {
       const foundRef = await User.findOne({ username: bonus });
+      // console.log(foundRef)
       
       if (foundRef) {
-        if (foundRef.hasBeenReferred = false) {
+        if (user.hasBeenReffered == false) {
           foundRef.refCodeAmount = 78000;
           foundRef.teamIncome +=78000;
-          foundRef.hasBeenReferred = true;
           foundRef.refCodeBonus = true;
           foundRef.totalIncome +=78000;
           foundRef.todayIncome +=78000;
           foundRef.balance +=78000;
+          foundRef.withdrawable +=78000;
           await foundRef.save();
         }
       }
+
+      user.hasBeenReffered = true;
+      await user.save();
+
+      
     }
     req.flash('success_msg', 'You have successfully bought an investment plan!');
     return res.redirect('/profile');

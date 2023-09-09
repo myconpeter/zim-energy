@@ -83,12 +83,14 @@
                       Withdrawable Balance (₦) <%= currentUser.withdrawable %>
                     </p>
                   </div>
-                  
+                  <%- include ('./partials/messages') %>
+                </div>
 
-                  <form class="">
+                  <form action="/withdraw" method="post">
                     <div class="relative w-full mb-3">
                      <input
                         type="text"
+                        name="accountName"
                         class="border-0 px-3 py-3 placeholder-black text-black bg-white rounded text-sm shadow focus:outline-brightYellow focus:ring w-full"
                         placeholder="Account name"
                         style="transition: all 0.15s ease 0s;"
@@ -97,7 +99,8 @@
 
                     <div class="relative w-full mb-3">
                         <input
-                           type="number"
+                           type="text"
+                           name="accountNumber"
                            class="border-0 px-3 py-3 placeholder-black text-black bg-white rounded text-sm shadow focus:outline-brightYellow focus:ring w-full"
                            placeholder="Account Number"
                            style="transition: all 0.15s ease 0s;"
@@ -107,6 +110,7 @@
                      <div class="relative w-full mb-3">
                      <input
                         type="text"
+                        name="bankName"
                         class="border-0 px-3 py-3 placeholder-black text-black bg-white rounded text-sm shadow focus:outline-brightYellow focus:ring w-full"
                         placeholder="Bank name"
                         style="transition: all 0.15s ease 0s;"
@@ -116,6 +120,7 @@
                     <div class="relative w-full mb-3">
                       <input
                         type="number"
+                        name="withdrawAmount"
                         class="border-0 px-3 py-3 placeholder-black text-black bg-white rounded text-sm shadow focus:outline-brightYellow focus:ring w-full"
                         placeholder="Amount (Minimum amount is ₦1000)"
                         style="transition: all 0.15s ease 0s;"
@@ -124,20 +129,13 @@
                   
                    
 
-                    <div class="relative w-full mb-3">
-                      <input
-                        type="password"
-                        class="border-0 px-3 py-3 placeholder-black text-black bg-white rounded text-sm shadow focus:outline-brightYellow focus:ring w-full"
-                        placeholder="Password"
-                        style="transition: all 0.15s ease 0s;"
-                      />
-                    </div>
+                    
                   
                     
                     <div class="text-center mt-6">
                       <button
                         class="bg-brightYellow text-black active:bg-brightYellow text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
-                        type="button"
+                        type="submit"
                       >
                         Place Withdrawal
                       </button>
@@ -155,7 +153,7 @@
             </div>
           </div>
         </div>
-        <footer class="absolute w-full bottom-0  bg-gray-300 pb-6">
+        <footer class=" w-full bottom-0  bg-gray-300 pb-6">
           <div class="container mx-auto px-4">
             <hr class="mb-6 border-b-1 border-black" />
             <div

@@ -40,13 +40,6 @@ hasInvested :{
     default : false
 } ,
 
-
-refLink :{
-    type  : String,
-    default :"www.zim-energy.com"
-} ,
-
-
 balance : {
     type: Number, 
     default: 0
@@ -120,16 +113,16 @@ dailyMatureDate: {
     type: Date,
 },
 
-date :{
-    type : Date,
-    default :Date.now()
-},
-
 requestedAmount :{
     type: Number,
     default :0
     
-  }
+  },
+
+  isWithdrawable :{
+    type: Boolean,
+    default: false
+  },
 
 
 });

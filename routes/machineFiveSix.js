@@ -46,6 +46,7 @@ cronJob = cron.schedule('* * 0 * * *', async () => {
               user.machineRunning= "No machine"
               user.dailyPay = 0;
               user.hasInvested = false;
+              user.isWithdrawable = true
           await user.save();
             }
           }
@@ -54,22 +55,28 @@ cronJob = cron.schedule('* * 0 * * *', async () => {
     });
     await user.save();
     const bonus = req.user.referralCode;
-    console.log(bonus)
+    
     if (bonus) {
       const foundRef = await User.findOne({ username: bonus });
+      // console.log(foundRef)
       
       if (foundRef) {
-        if (foundRef.hasBeenReferred = false) {
+        if (user.hasBeenReffered == false) {
           foundRef.refCodeAmount = 7800;
           foundRef.teamIncome +=7800;
-          foundRef.hasBeenReferred = true;
           foundRef.refCodeBonus = true;
           foundRef.totalIncome +=7800;
           foundRef.todayIncome +=7800;
           foundRef.balance +=7800;
+          foundRef.withdrawable +=7800;
           await foundRef.save();
         }
       }
+
+      user.hasBeenReffered = true;
+      await user.save();
+
+      
     }
     req.flash('success_msg', 'You have successfully bought an investment plan!');
     return res.redirect('/profile');
@@ -101,7 +108,7 @@ router.post('/machine6', ensureAuthenticated, async (req, res) => {
     user.balance -= price;
     user.withdrawable -= price;
     user.hasInvested = true;
-    user.machineRunning = "ZE-KW369";
+    user.machineRunning = "ZE-KW606max";
     user.machinePrice = 120000;
     user.boughtMachineDate = new Date();   
     user.machineReturn = 175000;
@@ -120,6 +127,7 @@ cronJob = cron.schedule('* * 0 * * *', async () => {
               user.machineRunning= "No machine"
               user.dailyPay = 0;
               user.hasInvested = false;
+              user.isWithdrawable = true
           await user.save();
             }
           }
@@ -128,22 +136,28 @@ cronJob = cron.schedule('* * 0 * * *', async () => {
     });
     await user.save();
     const bonus = req.user.referralCode;
-    console.log(bonus)
+    
     if (bonus) {
       const foundRef = await User.findOne({ username: bonus });
+      // console.log(foundRef)
       
       if (foundRef) {
-        if (foundRef.hasBeenReferred = false) {
+        if (user.hasBeenReffered == false) {
           foundRef.refCodeAmount = 15600;
           foundRef.teamIncome +=15600;
-          foundRef.hasBeenReferred = true;
           foundRef.refCodeBonus = true;
           foundRef.totalIncome +=15600;
           foundRef.todayIncome +=15600;
           foundRef.balance +=15600;
+          foundRef.withdrawable +=15600;
           await foundRef.save();
         }
       }
+
+      user.hasBeenReffered = true;
+      await user.save();
+
+      
     }
     req.flash('success_msg', 'You have successfully bought an investment plan!');
     return res.redirect('/profile');

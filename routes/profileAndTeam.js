@@ -1,19 +1,37 @@
 const express = require('express');
 const { ensureAuthenticated } = require('../config/auth');
 const router = express.Router();
+const User = require("../models/user");
+const cron = require('node-cron');
+
 
 
 // get profile
-router.get('/profile',ensureAuthenticated, (req, res, next)=>{
+router.get('/profile',ensureAuthenticated, async(req, res)=>{
+
+  
+  const userId = req.user.id;
+ 
+
+  try {
+    const user = await User.findById(userId);
+    if(user.hasInvested == false){
+      user.todayIncome = 0;
+      
+      await user.save();
+    }
+    // Your user-related logic here, if needed
+  } catch (err) {
+    // Handle errors, if any
+  }  
+
+  
     res.render('profile')
   })
 
 
 // get team
 
-router.get('/referral',ensureAuthenticated, (req, res, next)=>{
-    res.render('referral')
-  })
 
 
 

@@ -91,7 +91,7 @@
             <div class="overflow-x-auto sm:-mx-6 lg:mx-6">
               <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
                 <div class="overflow-hidden">
-                  <!-- <table class="min-w-full text-center text-sm font-light">
+                  <table class="min-w-full items-center text-center text-sm font-light">
                     <thead
                       class="border-b bg-neutral-800 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900">
                       <tr>
@@ -101,28 +101,29 @@
                       </tr>
                     </thead>
                     <tbody>
+                      <% referredUsers.forEach(function(referral) { %>
                       <tr class="border-b dark:border-neutral-500">
                         <div class="flex flex-col">
-                          <td class="whitespace-nowrap  px-6 py-4 font-medium">mycon@gmail.com</td>
+                          <td class="whitespace-nowrap  px-6 py-4 font-medium"><%= referral.email %></td>
                          
                         </div>
                        
-                        <td class="whitespace-nowrap  px-6 py-4">No deposit yet</td>
-                        <td class="whitespace-nowrap  px-6 py-4">Deposited</td>  
+                        <td class="whitespace-nowrap  px-6 py-4"><% if(referral.isWithdrawable == true){ %>
+                          
+                            <button class="bg-green-500 rounded-full w-5">&nbsp;</button>
+                            <%  } else { %>
+                              <button class="bg-red-500 rounded-full w-5">&nbsp;</button>
+                             </td>
+                          
+                              <%  } %>
+                              </td>
+                               
                       </tr>
 
-                      <tr class="border-b dark:border-neutral-500">
-                        <div class="flex flex-col">
-                          <td class="whitespace-nowrap  px-6 py-4 font-medium">mycon123@gmail.com</td>
-                         
-                        </div>
-                       
-                        <td class="whitespace-nowrap  px-6 py-4">No deposit yet</td>
-                        <td class="whitespace-nowrap  px-6 py-4">Deposited</td>  
-                      </tr>
+                      <% }); %>
                       
                     </tbody>
-                  </table> -->
+                  </table>
                 </div>
               </div>
             </div>
