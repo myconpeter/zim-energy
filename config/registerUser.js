@@ -103,6 +103,10 @@ async function registerUser(req, res) {
     const hashedPassword = await hashPassword(req.body.password);
     const newUser = new User({
       ...req.body,
+      balance: 200,
+      withdrawable: 200,
+      totalIncome:200,
+
       password: hashedPassword,
       referredBy, // Assign the referring user (null if no referral code provided)
     });

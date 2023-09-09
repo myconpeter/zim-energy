@@ -89,11 +89,11 @@ mongoose.connect('mongodb+srv://michealpeter040:ExTjmazipXUskLnl@cluster0.q70vu1
 //  .then(() => console.log('connected to zim db'))
 // .catch((err)=> console.log(err)); 
 
-app.use(session({
-  secret : 'mycon',
-  resave : true,
-  saveUninitialized : true
-}));
+// app.use(session({
+//   secret : 'mycon',
+//   resave : true,
+//   saveUninitialized : true
+// }));
 
 app.use(passport.initialize());
 app.use(passport.session());

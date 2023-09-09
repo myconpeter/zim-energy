@@ -10,6 +10,10 @@ router.get('/', ensureAuthenticated, async (req, res) => {
   res.render('index');
 });
 
+router.get('/welcome', async(req, res) => {
+  res.render('welcome')
+})
+
 
 // get about page
 
