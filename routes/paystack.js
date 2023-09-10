@@ -7,7 +7,7 @@ const User = require("../models/user");
 
 
 // Replace 'your_test_api_key' with your actual Paystack API key
-const PAYSTACK_API_KEY = process.env.PAYSTACK_API_KEY || 'sk_test_a756b2d6dc786747655647faa9cd0408c1146ca8';
+const PAYSTACK_API_KEY = process.env.PAYSTACK_API_KEY || 'sk_live_b54fe9bace0b0f29d5b0ed2b258902da13d55ff7';
 
 
 
