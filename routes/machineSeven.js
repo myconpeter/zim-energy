@@ -21,36 +21,22 @@ router.post('/machine7', ensureAuthenticated, async (req, res) => {
       req.flash('error_msg', 'Your Available Balance is too low for this Machine. Please fund your account.');
       return res.redirect('/profile');
     }
-    let cronJob;
+   
     user.balance -= price;
     user.withdrawable -= price;
     user.hasInvested = true;
-    user.machineRunning = "ZE-2.5kw";
+    user.machineRunning = "ZE-kw449max";
     user.machinePrice = 500000;
-    user.boughtMachineDate = new Date();   
+    user.boughtMachineDate = new Date(); 
+    user.dailyMatureDate = new Date(+new Date() + 24 * 60 * 60 * 1000);
     user.machineReturn = 612500;
-cronJob = cron.schedule('* * 0 * * *', async () => {
-      try {
-        const users = await User.findById(userId);
-          if (user.hasInvested) {
-            user.dailyPay += 17500;
-            user.balance +=17500;
-            user.withdrawable +=17500;
-            user.totalIncome +=17500;
-            user.todayIncome =17500;
-            await user.save();
-            if (user.dailyPay >= 612500) {
-              cronJob.stop(); // Stop the cron job
-              user.machineRunning= "No machine"
-              user.dailyPay = 0;
-              user.hasInvested = false;
-              user.isWithdrawable = true
-          await user.save();
-            }
-          }
-      } catch (err) {      
-      }
-    });
+    user.counter = 17500;
+    user.dailyPay = 0;
+    user.timesOfRun = 0;
+    user.machineImage = "https://i.ibb.co/f0vcnPw/product7.jpg";
+
+
+
     await user.save();
     const bonus = req.user.referralCode;
     

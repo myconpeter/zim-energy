@@ -20,12 +20,12 @@ router.get('/withdraw', ensureAuthenticated, (req, res)=>{
   const Withdrawable = req.user.isWithdrawable
   
   if(investment < 1000){
-      req.flash('error_msg' , 'This amount is to low, please fund your account');
+      req.flash('error_msg' , 'Your current balance is too low, Please fund your account');
           res.redirect('/profile');
       } 
   
       else if (Withdrawable == false){
-          req.flash('error_msg' , 'You cannot make withdrawal, please make an investment');
+          req.flash('error_msg' , 'You cannot make withdrawal, Please make an investment');
           res.redirect('/profile');
       }
    
@@ -94,7 +94,7 @@ router.get('/withdraw', ensureAuthenticated, (req, res)=>{
           user.balance -= withdrawAmount;
           user.withdrawable -= withdrawAmount;
           await user.save();
-          req.flash('success_msg', 'You have Successfully Placed a withdrawal, please wait to be credit');
+          req.flash('success_msg', 'You have Successfully Placed a withdrawal, Your request is processing...');
           res.redirect('/profile');
         } else {
           errors.push({ msg: 'Withdrawal not saved' });

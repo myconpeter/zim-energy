@@ -90,9 +90,7 @@ machineReturn: {
     default :"0"
 },
 
-boughtMachineDate: {
-    type :Date,
-},
+
 
 hasBeenReffered: {
     type :Boolean,
@@ -109,9 +107,7 @@ refCodeAmount: {
     default : 0
 },
 
-dailyMatureDate: {
-    type: Date,
-},
+
 
 requestedAmount :{
     type: Number,
@@ -124,6 +120,31 @@ requestedAmount :{
     default: false
   },
 
+
+  boughtMachineDate: {
+    type :Date,
+},
+
+  dailyMatureDate: {
+    type: Date,
+},
+
+  date :{
+    type: Date,
+    default: Date.now()
+  },
+
+  counter :{
+    type: Number,
+  },
+
+  timesOfRun :{
+    type :Number,
+  },
+
+  machineImage :{
+    type :String,
+  }
 
 });
 

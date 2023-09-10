@@ -15,7 +15,7 @@ router.get('/profile',ensureAuthenticated, async(req, res)=>{
 
   try {
     const user = await User.findById(userId);
-    if(user.hasInvested == false){
+    if(Date.now() >= currentUser.dailyMatureDate){
       user.todayIncome = 0;
       
       await user.save();

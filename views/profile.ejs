@@ -1,65 +1,88 @@
 <%- include ('./partials/profileHeader') %>
 <%- include ('./partials/messages') %>
 
+
+
+
+
+
+
             <div class="h-screen px-4 pb-24 overflow-auto md:px-6">
                 
+                
                 <h2 class="text-gray-400 text-md">
-                    Here&#x27;s what&#x27;s happening with your account today.
+               Welcome  <%= currentUser.fullname %>, here&#x27;s what&#x27;s happening with your account today.
                 </h2>
+                <% if(currentUser.hasInvested == true){ %>
+                <form action="/machineReturn" method="post">  
+                <div class="max-w-sm rounded my-4 overflow-hidden shadow-lg">
+                    <div class="font-bold text-xl mb-2 ">
+                        <p class="text-brightYellow text-2xl">
+                         <span class="text-black">₦</span>    <%= currentUser.dailyPay %>                        
+                         <span class="inline-block bg-green-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">ongoing</span>
 
-                <div class="flex flex-col items-center w-full my-6 space-y-4 md:space-x-4 md:space-y-0 md:flex-row">
-                    <div class="w-full md:w-6/12">
+                             
+                        </p>
+                         
 
-                        <div class="relative w-full overflow-hidden bg-white shadow-lg dark:bg-gray-700">
-                            <a class="block w-full h-full">
-                                
-
-                                <div class="flex items-center justify-between px-4 py-6 space-x-4">
-                                    <% if(currentUser.hasInvested == true){ %>
-                                        
-                                        
-                                    <div class="flex items-center">
-                                       
-                                        <p class="ml-2 text-2xl font-semibold text-gray-700 border-b border-gray-200 dark:text-white">
-                                            <%= currentUser.machineRunning %> Currently Running
-                                        </p>
-                                    </div>
-                                    <div class="mt-6 text-xl font-bold text-black border-b border-gray-200 md:mt-0 dark:text-white">
-                                        <%= currentUser.dailyPay %> 
-                                        <span class="text-xs text-gray-400">
-                                            /
-                                            <%= currentUser.machineReturn %> 
-                                        </span>
-                                    </div>
-                                    <%  } else { %>
-                                        
-                                        <div class="flex items-center">
-                                       
-                                            <p class="ml-2 text-2xl font-semibold text-gray-700 border-b border-gray-200 dark:text-white">
-                                                No Active Machine Running
-                                            </p>
-                                           
-                                           
-                                        </div>
-                                        <div class="item-center text-center">
-                                            <a        href="/productAndService"
-                                                  class="bg-brightYellow text-black active:bg-darkYellow text-sm font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                                                  type="button"
-                                                  style="transition: all 0.15s ease 0s;"
-                                                >
-                                                Purchase Machine
-                                      </a>
-                                        </div>
-                                        
-                                  <%  } %> 
-                                </div>
-                                
-                            </a>
+                        <div>
+                           <span  class="text-gray-500">Current Times : </span> <span class="text-gray-500"> <%= currentUser.timesOfRun %> </span> 
                         </div>
-                    </div>
-                  
+
+                        <div class="text-gray-500">
+                            Rebate time: <%= currentUser.dailyMatureDate.toLocaleString() %> 
+                        </div>
                     
-                </div>
+                    </div>
+                    <img src="<%= currentUser.machineImage %>" alt="product3">                
+                        <div class="px-6 py-4">
+                      <div class="font-bold text-3xl mb-2"><%= currentUser.machineRunning %></div>
+                    Total return :  <div class="font-bold text-xl mb-2"> <%= currentUser.machineReturn %>                       </div>
+
+                      <p class="text-gray-700 text-base">
+                        This machine currently run every 24 hours
+                      </p>
+                    </div>
+
+                    <% if(currentUser.hasInvested == true && new Date() >= currentUser.dailyMatureDate) { %>
+
+                    <div class="px-6 pt-4 pb-2 text-center">
+                        <button        
+                        class="bg-brightYellow text-black active:bg-darkYellow text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                        type="submit"
+                        style="transition: all 0.15s ease 0s;"
+                       >
+                           Claim Daily Income
+                       </button>
+                      </p></span>
+                    </div>
+                    <% }else { %>
+                                        
+                        <% } %>
+                  </div>
+                </form>
+
+                <%  } else { %>
+                                        
+                    <div class="flex items-center">
+                   
+                        <p class="ml-2 text-2xl font-semibold text-gray-700 border-b border-gray-200 dark:text-white">
+                            No Active Machine Running
+                        </p>
+                       
+                       
+                    </div>
+                    <div class="item-center text-center">
+                        <a        href="/productAndService"
+                              class="bg-brightYellow text-black active:bg-darkYellow text-sm font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                              type="button"
+                              style="transition: all 0.15s ease 0s;"
+                            >
+                            Purchase Machine
+                  </a>
+                    </div>
+                    
+              <%  } %> 
                 
                 <div class="flex flex-row  w-full my-6 space-y-4 space-x-4 space-y-0 mt-4">
                     <div class="w-1/2 flex flex-row items-center justify-between mx-2">

@@ -23,36 +23,21 @@ router.post('/machine1', ensureAuthenticated, async (req, res) => {
       req.flash('error_msg', 'Your Available Balance is too low for this Machine. Please fund your account.');
       return res.redirect('/profile');
     }
-    let cronJob;
+    
     user.balance -= price;
     user.withdrawable -= price;
     user.hasInvested = true;
     user.machineRunning = "ZE-7kw";
     user.machinePrice = 4000;
-    user.boughtMachineDate = new Date();   
+    user.boughtMachineDate = new Date();  
+    user.dailyMatureDate = new Date(+new Date() + 24 * 60 * 60 * 1000)
     user.machineReturn = 10500;
-cronJob = cron.schedule('* * * * * *', async () => {
-      try {
-        const users = await User.findById(userId);
-          if (user.hasInvested) {
-            user.dailyPay += 350;
-            user.balance +=350;
-            user.withdrawable +=350;
-            user.totalIncome +=350;
-            user.todayIncome =350;
-            await user.save();
-            if (user.dailyPay >= 10500) {
-              cronJob.stop(); // Stop the cron job
-              user.machineRunning= "No machine"
-              user.dailyPay = 0;
-              user.hasInvested = false;
-              user.isWithdrawable = true
-          await user.save();
-            }
-          }
-      } catch (err) {      
-      }
-    });
+    user
+    user.dailyPay = 0;
+    user.counter = 350;
+    user.timesOfRun = 0;
+    user.machineImage = "https://i.ibb.co/pLDzcJJ/product1.jpg";
+
     await user.save();
     const bonus = req.user.referralCode;
     
@@ -104,36 +89,20 @@ router.post('/machine2', ensureAuthenticated, async (req, res) => {
       req.flash('error_msg', 'Your Available Balance is too low for this Machine. Please fund your account.');
       return res.redirect('/profile');
     }
-    let cronJob;
+   
     user.balance -= price;
     user.withdrawable -= price;
     user.hasInvested = true;
     user.machineRunning = "ZE-2.5kw";
     user.machinePrice = 10000;
     user.boughtMachineDate = new Date();   
+    user.dailyMatureDate = new Date(+new Date() + 24 * 60 * 60 * 1000)
     user.machineReturn = 23250;
-cronJob = cron.schedule('* * 0 * * *', async () => {
-      try {
-        const users = await User.findById(userId);
-          if (user.hasInvested) {
-            user.dailyPay += 750;
-            user.balance +=750;
-            user.withdrawable +=750;
-            user.totalIncome +=750;
-            user.todayIncome =750;
-            await user.save();
-            if (user.dailyPay >= 23250) {
-              cronJob.stop(); // Stop the cron job
-              user.machineRunning= "No machine"
-              user.dailyPay = 0;
-              user.hasInvested = false;
-              user.isWithdrawable = true
-          await user.save();
-            }
-          }
-      } catch (err) {      
-      }
-    });
+    user.counter = 750;
+    user.dailyPay = 0;
+    user.timesOfRun = 0;
+    user.machineImage = "https://i.ibb.co/B4tmsVd/product2.jpg";
+
     await user.save();
     const bonus = req.user.referralCode;
     
