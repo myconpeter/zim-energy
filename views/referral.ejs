@@ -81,7 +81,7 @@
         <section id="Transaction">
           <div class="flex flex-wrap justify-center text-center mb-4">
             <div class="w-full lg:w-6/12 px-4">
-              <h2 class="text-4xl font-semibold text-black">Your Referrals</h2>
+              <h2 class="text-4xl font-semibold underline text-black">Your Referrals</h2>
                
              
             </div>
@@ -91,6 +91,14 @@
             <div class="overflow-x-auto sm:-mx-6 lg:mx-6">
               <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
                 <div class="overflow-hidden">
+                  <% if (referredUsers == 0) { %>
+                    <div class="mb-4">
+                      <h2 class="text-center text-3xl">
+                        No Referrals Yet...
+                      </h2>
+                     
+                    </div>
+                    <% }else{%>
                   <table class="min-w-full items-center text-center text-sm font-light">
                     <thead
                       class="border-b bg-neutral-800 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900">
@@ -124,16 +132,12 @@
                       
                     </tbody>
                   </table>
+                  <% } %>
                 </div>
               </div>
             </div>
           </div>
-          <div class="mb-4">
-            <!-- <h2 class="text-center text-3xl">
-              No Referrals Yet...
-            </h2> -->
-           
-          </div>
+          
 
           <div class="flex flex-col ">
     

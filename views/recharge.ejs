@@ -1,135 +1,179 @@
-<%- include ('./partials/productHeader') %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/img/apple-icon.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css"
+    />
+    <link
+     rel="stylesheet" 
+     href="stylesheets/style.css"
+    />
 
-    <main>
-       
-      <section class="bg-white">
-        <div class="item-center text-center">
-            <a        href="/profile"
-                  class="bg-brightYellow text-black active:bg-darkYellow text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                  type="button"
-                  style="transition: all 0.15s ease 0s;"
-                >
-                Go Back
-      </a>
-        </div>
-        
-
-        <div class="flex flex-wrap justify-center text-center mb-4">
-          <div class="w-full lg:w-6/12 px-8">
-            <h2 class="text-4xl font-semibold text-black">Recharge</h2>
-             
-           
-          </div>
-        </div>
-        <div class="flex flex-wrap justify-end text-right mb-12 mx-6">
+    <title> Zim - Energy</title>
+  </head>
+  <body class="text-black antialiased">
+    <nav
+      class="top-0 absolute z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 "
+    >
+      <div
+        class="container px-4 mx-auto flex flex-wrap items-center justify-between"
+      >
+        <div
+          class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start"
+        >
+          
           
         </div>
-    
-      <div class="flex flex-col ">
-    
-    <div class="mx-6 ">
-        <h3 class="font-semibold text-2xl text-black">
-            Recharge instructions 
-        </h3>
-    </div>
-    <div class="mx-8"> 
-        <p class="text-xs md:text-xl">
-           1. The minimum recharge account is N4000,Transfer below will not be credited.
-        </p>
-        <p class="text-xs md:text-xl">
-            2. Do not remit money to the previous receiving account. Every time you recharge you must resubmit the  recharge request to obtain latest platform 
-            recharge account for transfer 
-         </p>
-         <p class="text-xs md:text-xl">
-            3. Please operate in  strict accordance with the recharge rules. If you  do not recharge according to the platform rules  and cause property losses,
-            the company will not be responsible.
-         </p>
-         <p class="text-xs md:text-xl">
-            4. On the payment page just scroll down and select bank transfer so from there you see your one time account to pay into.
-         </p>
-    </div>
-
-          </div>    
-
-          <div class="h-16">
-
-          </div>
-
-          <div class="mx-6 ">
-            <h3 class="font-semibold text-xl text-black">
-                How much are depositing?
-            </h3>
-        </div>
-
-        <div class="h-8">
-
-        </div>
-
-        <hr class="mb-6 border-b-1 border-black" />
-        <a        href="/accountDetails"
-        name="depo1"
-        class="bg-brightYellow text-black active:bg-darkYellow text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-        type="button"
-        style="transition: all 0.15s ease 0s;"
-        id="depo1"
-      >
-      ₦ 4,000
-</a>
-
-<a        href="/accountDetails1"
-                  class="bg-brightYellow text-black active:bg-darkYellow text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                  type="button"
-                  style="transition: all 0.15s ease 0s;"
-                >
-                ₦ 10,000
-      </a>
-
-      <a        href="/accountDetails2"
-                  class="bg-brightYellow text-black active:bg-darkYellow text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                  type="button"
-                  style="transition: all 0.15s ease 0s;"
-                >
-                ₦ 15,000
-      </a>
-      <a        href="/accountDetails3"
-                  class="bg-brightYellow text-black active:bg-darkYellow text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                  type="button"
-                  style="transition: all 0.15s ease 0s;"
-                >
-                ₦ 25,000
-      </a>
-      <a        href="/accountDetails4"
-                  class="bg-brightYellow text-black active:bg-darkYellow text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                  type="button"
-                  style="transition: all 0.15s ease 0s;"
-                >
-                ₦ 60,000
-      </a>
-      <a        href="/accountDetails5"
-                  class="bg-brightYellow text-black active:bg-darkYellow text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                  type="button"
-                  style="transition: all 0.15s ease 0s;"
-                >
-                ₦ 120,000
-      </a>
-      <a        href="/accountDetails6"
-                  class="bg-brightYellow text-black active:bg-darkYellow text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-                  type="button"
-                  style="transition: all 0.15s ease 0s;"
-                >
-                ₦ 500,000
-      </a>
-      <div class="h-8">
-
+        
       </div>
+    </nav>
+    <main>
 
-      <hr class="mb-6 border-b-1 border-black" />
+      <section class="absolute w-full h-full">
+        <div
+          class="absolute top-0 w-full h-full bg-gray-300"
+        ></div>
+        <div class="container mx-auto px-4 h-full">
+          <div class="flex content-center items-center justify-center h-full">
+            <div class="w-full lg:w-4/12 px-4">
+              <div
+                class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0"
+              >
+                <div class="rounded-t mb-0 px-6 py-6">
+                  
+                  <div class="btn-wrapper text-center">
+                   
+                  </div>
+                </div> <div class="btn-wrapper text-center">
+                   
+                  <a        href="/profile"
+                class="bg-brightYellow text-black active:bg-darkYellow text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+                type="button"
+                style="transition: all 0.15s ease 0s;"
+              >
+              Back
+    </a>
+                </div>
 
+                <%- include ('./partials/messages') %>
+                <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+                  <div class="text-black text-center mb-3 font-bold">
+                    <small>Please fil this form and proceed to make payment</small>
+                  </div>
+                  <form action="/pay" method="POST">
+                    <div class="flex flex-row w-full mb-3">
+                        <input
+                           type="email" 
+                           name="email"                   
+                           placeholder="Email"
+                           class="border-0 px-3 py-3 placeholder-black text-black bg-white rounded text-sm shadow focus:outline-brightYellow focus:ring w-full"
+                           style="transition: all 0.15s ease 0s;"
+                         />
+                    
 
-        </section>
-            
+                      </div>
+                      <div class="flex flex-row w-full mb-3">
 
+                        <select id="amount" name="amount"  
+                                            
+                         class="border-0 px-3 py-3 placeholder-black text-black bg-white rounded text-sm shadow focus:outline-brightYellow focus:ring w-full"
+                        > 
+                          <option value="">Amount</option>
+                          <option value="4000">₦ 4,000</option>
+                          <option value="10000">₦ 10,000</option>
+                          <option value="15000">₦ 15,000</option>
+                          <option value="25000">₦ 25,000</option>
+                          <option value="60000">₦ 60,000</option>
+                          <option value="120000">₦ 120,000</option>
+                          <option value="500000">₦ 500,000</option>
+                          <!-- Add more options as needed -->
+                        </select>
+                       
+                     </div>
+
+                    
+                      
+
+                    <div>
+                      
+                    </div>
+                    
+                    <div class="text-center mt-6">
+                      <button
+                        class="bg-brightYellow text-black active:bg-brightYellow text-sm font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
+                        type="submit"
+
+                      >
+                        Proceed to make Payment
+                      </button>
+                    </div>
+                  </form>
+
+                  
+                  <div class="text-center mt-6">
+                    
+                  </div>
+                </div>
+              </div>
+
+              
+            </div>
+          </div>
+        </div>
+        <footer class="absolute w-full bottom-0 bg-gray-300 pb-6">
+          <div class="container mx-auto px-4">
+            <hr class="mb-6 border-b-1 border-black" />
+            <div
+              class="flex flex-wrap items-center md:justify-between justify-center"
+            >
+              <div class="w-full md:w-4/12 px-4">
+                <div class="text-sm text-black font-semibold py-1">
+                    Copyright &copy;<script data-cfasync="false" ></script><script>document.write(new Date().getFullYear());</script> All rights reserved 
+                 
+                </div>
+              </div>
+             
+            </div>
+          </div>
+        </footer>
+      </section>
     </main>
+  </body>
 
-    <%- include ('./partials/productFooter') %>
+  <script>
+    function toggleNavbar(collapseID) {
+      document.getElementById(collapseID).classList.toggle("hidden");
+      document.getElementById(collapseID).classList.toggle("block");
+    }
 
+   
+
+    
+  </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const referralCode = urlParams.get('depo1');
+
+    if (referralCode) {
+      document.getElementById('depo1').value = referralCode;
+    }
+  });
+</script>
+ 
+</html>

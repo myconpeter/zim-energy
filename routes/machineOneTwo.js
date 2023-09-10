@@ -31,7 +31,7 @@ router.post('/machine1', ensureAuthenticated, async (req, res) => {
     user.machinePrice = 4000;
     user.boughtMachineDate = new Date();   
     user.machineReturn = 10500;
-cronJob = cron.schedule('* * 0 * * *', async () => {
+cronJob = cron.schedule('* * * * * *', async () => {
       try {
         const users = await User.findById(userId);
           if (user.hasInvested) {

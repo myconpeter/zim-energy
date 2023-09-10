@@ -31,6 +31,7 @@ const machineSevenRoutes = require("./routes/machineSeven");
 const profileAndTeamRoutes = require("./routes/profileAndTeam");
 const referralAndRechargeRoutes = require("./routes/referralAndRecharge");
 const withdrawRoutes = require("./routes/withdraw");
+const paymentRoutes = require("./routes/paystack")
 
 
 
@@ -89,11 +90,11 @@ mongoose.connect('mongodb+srv://michealpeter040:ExTjmazipXUskLnl@cluster0.q70vu1
 //  .then(() => console.log('connected to zim db'))
 // .catch((err)=> console.log(err)); 
 
-// app.use(session({
-//   secret : 'mycon',
-//   resave : true,
-//   saveUninitialized : true
-// }));
+app.use(session({
+  secret : 'mycon',
+  resave : true,
+  saveUninitialized : true
+}));
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -135,6 +136,8 @@ app.use('/', machineSevenRoutes);
 app.use('/', profileAndTeamRoutes);
 app.use('/', referralAndRechargeRoutes);
 app.use('/', withdrawRoutes);
+app.use('/', paymentRoutes);
+
 
 app.get('*', (req, res, next)=>{
   res.render('error404')
