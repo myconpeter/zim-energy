@@ -58,6 +58,7 @@ router.post('/machine7', ensureAuthenticated, async (req, res) => {
       }
 
       user.hasBeenReffered = true;
+      user.isWithdrawable = true;
       await user.save();
 
       
