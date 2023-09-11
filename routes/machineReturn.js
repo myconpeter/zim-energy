@@ -26,7 +26,7 @@ router.post('/machineReturn', ensureAuthenticated, async (req, res) => {
       user.withdrawable += count;
       user.totalIncome += count;
       user.todayIncome = count;
-      user.dailyMatureDate = new Date(+new Date() + 5 * 1000); // 30 days in the future
+      user.dailyMatureDate = new Date(+new Date() + 24 * 60 * 60 * 1000); // 30 days in the future
       user.timesOfRun += 1;
 
       if (user.dailyPay >= machineReturn) {
