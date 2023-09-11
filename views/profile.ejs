@@ -30,7 +30,9 @@
                         </div>
 
                         <div class="text-gray-500 text-sm">
-                            Rebate time: <%= currentUser.dailyMatureDate.toLocaleDateString()%> 
+                            Rebate time: <%= currentUser.dailyMatureDate.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) %>
+
+ 
                         </div>
                     
                     </div>
