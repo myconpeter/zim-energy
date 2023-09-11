@@ -26,15 +26,15 @@
                          
 
                         <div>
-                           <span  class="text-gray-500">Current Times : </span> <span class="text-gray-500"> <%= currentUser.timesOfRun %> </span> 
+                           <span  class="text-gray-500 text-sm">Current Times : </span> <span class="text-gray-500 text-sm"> <%= currentUser.timesOfRun %> </span> 
                         </div>
 
-                        <div class="text-gray-500">
-                            Rebate time: <%= currentUser.dailyMatureDate.toLocaleString() %> 
+                        <div class="text-gray-500 text-sm">
+                            Rebate time: <%= currentUser.dailyMatureDate.toLocaleDateString()%> 
                         </div>
                     
                     </div>
-                    <img src="<%= currentUser.machineImage %>" alt="product3">                
+                    <img class="h-48 w-full rounded-md" src="<%= currentUser.machineImage %>" alt="product3">                
                         <div class="px-6 py-4">
                       <div class="font-bold text-3xl mb-2"><%= currentUser.machineRunning %></div>
                     Total return :  <div class="font-bold text-xl mb-2"> <%= currentUser.machineReturn %>                       </div>
