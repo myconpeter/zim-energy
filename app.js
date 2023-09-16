@@ -5,6 +5,8 @@ const mongoose= require('mongoose');
 const passport = require ('passport');
 const session = require('express-session');
 const flash = require("connect-flash");
+const multer = require('multer');
+const ejs = require('ejs');
 
 const PORT  = process.env.PORT || 8000;
 
@@ -90,6 +92,19 @@ mongoose.connect('mongodb+srv://michealpeter040:ExTjmazipXUskLnl@cluster0.q70vu1
 //  })
 //  .then(() => console.log('connected to zim db'))
 // .catch((err)=> console.log(err)); 
+
+
+// image upload
+
+const storage = multer.diskStorage({
+  destination: './public/uploads/',
+  filename: (req, file, callback) => {
+      callback(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+  }
+});
+
+const upload = multer({ storage: storage });
+
 
 app.use(session({
   secret : 'mycon',

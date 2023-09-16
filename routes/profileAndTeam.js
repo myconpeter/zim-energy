@@ -2,7 +2,9 @@ const express = require('express');
 const { ensureAuthenticated } = require('../config/auth');
 const router = express.Router();
 const User = require("../models/user");
-const cron = require('node-cron');
+const withdrawal = require("../models/withdrawal");
+const Deposit = require("../models/deposit");
+
 
 
 
@@ -38,6 +40,10 @@ router.get('/profile',ensureAuthenticated, async(req, res)=>{
 // get history
 
 router.get('/history',ensureAuthenticated, (req, res, next)=>{
+
+  
+
+
     res.render('history')
   })
 

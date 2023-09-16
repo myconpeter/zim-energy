@@ -10,16 +10,14 @@ router.get('/referral', ensureAuthenticated, async (req, res) => {
   const userId = req.user.id; 
   const userName = req.user.username;
 
-  
-
   try {
     const referredUsers = await User.find(
       {referralCode: userName}
       );
 
-   
+      const referredUsersCount = referredUsers.length;
 
-    res.render('referral', { referredUsers });
+    res.render('referral', { referredUsers, referredUsersCount  });
   } catch (err) {
     // Handle errors
     console.error(err);

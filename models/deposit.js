@@ -30,6 +30,16 @@ const DepositSchema  = new mongoose.Schema({
         
       },
 
+      narration :{
+        type : String
+      },
+
+      senderName : {
+        type: String
+      },
+
+      proofImage: String, 
+
 ////////////////////////////////////////////////////////////////
 
 depositedDate: {
