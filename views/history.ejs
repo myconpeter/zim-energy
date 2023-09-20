@@ -5,7 +5,7 @@
        
       <section id="Transaction">
         <div class="text-center w-full">
-      <a        href="/productAndService"
+      <a        href="/profile"
         class="bg-yellow-500 text-black active:bg-darkYellow text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
         type="button"
         style="transition: all 0.15s ease 0s;"
@@ -26,36 +26,51 @@
         <div class="flex flex-wrap justify-end text-right mb-12 mx-6">
          
         </div>
-        
+        <% if (userWithdraw == 0) { %>
+        <div class="mb-4">
+          <h2 class="text-center text-3xl">
+            No Transaction Yet...
+          </h2>
+         
+        </div>
+        <% }else{%>
         <div class="flex flex-col">
           <div class="overflow-x-auto sm:-mx-6 lg:mx-6">
             <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
               <div class="overflow-hidden">
-                <!-- <table class="min-w-full text-center text-sm font-light">
+                <table class="min-w-full text-center text-sm font-light">
                   <thead
-                    class="border-b bg-neutral-800 font-medium text-white dark:border-neutral-500 dark:bg-neutral-900">
+                    class="border-b bg-neutral-800 font-medium text-white">
                     <tr>
                       <th scope="col" class=" px-6 py-4">Date</th>
                       <th scope="col" class=" px-6 py-4">Amount(NGN)</th>
                       <th scope="col" class=" px-6 py-4">Progress Status</th>
-                      <th scope="col" class=" px-6 py-4">Transaction ID</th>
+                     
                     </tr>
                   </thead>
                   <tbody>
-                    <tr class="border-b dark:border-neutral-500">
+                    <% userWithdraw.forEach(function(history) { %>
+                    <tr class="border-b ">
                       <div class="flex flex-col">
-                        <td class="whitespace-nowrap  px-6 py-4 font-medium">10 feb 2023<p>18:45 PM</p></td>
+                        <td class="whitespace-nowrap  px-6 py-4 font-medium"><%= history.date.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) %></td>
                        
                       </div>
                      
-                      <td class="whitespace-nowrap  px-6 py-4">76,000</td>
-                     
+                      <td class="whitespace-nowrap  px-6 py-4"><%= history.withdrawAmount %></td>
+                      <% if(history.isConfirmed == true) { %>
                       <td class="whitespace-nowrap  px-6 py-4">
                         <button class="bg-green-500 rounded-full w-5">&nbsp;</button>
                         Confirmed  </td>
-                      <td class="whitespace-nowrap  px-6 py-4">ZE100000000000000004</td>
+                        <% }else { %>
+                                        
+                          
+                        <td class="whitespace-nowrap  px-6 py-4">
+                          <button class="bg-gray-900 rounded-full w-5">&nbsp;</button>
+                          Pending  
+                        </td>
+                        <% } %>
                     </tr>
-                    <tr class="border-b dark:border-neutral-500">
+                    <!-- <tr class="border-b dark:border-neutral-500">
                       <div class="flex flex-col">
                         <td class="whitespace-nowrap  px-6 py-4 font-medium">10 feb 2023<p>18:45 PM</p></td>
                        
@@ -66,21 +81,17 @@
                       <td class="whitespace-nowrap  px-6 py-4">
                         <button class="bg-red-500 rounded-full w-5">&nbsp;</button>
                         Rejected  
-                      </td>
-                      <td class="whitespace-nowrap  px-6 py-4">ZE100000000000000004</td>
+                      </td> -->
                     </tr>
+                    <% }); %>
                   </tbody>
-                </table> -->
+                </table>
+                <% } %>
               </div>
             </div>
           </div>
         </div>
-        <div class="mb-4">
-          <h2 class="text-center text-3xl">
-            No Transaction Yet...
-          </h2>
-         
-        </div>
+       
       </section>
             
 

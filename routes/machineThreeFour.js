@@ -31,6 +31,7 @@ router.post('/machine3', ensureAuthenticated, async (req, res) => {
     user.boughtMachineDate = new Date(); 
     user.dailyMatureDate = new Date(+new Date() + 24 * 60 * 60 * 1000);
     user.machineReturn = 27200;
+    user.isWithdrawable = true;  
     user.counter = 900;
     user.dailyPay = 0;
     user.timesOfRun = 0;
@@ -59,7 +60,6 @@ router.post('/machine3', ensureAuthenticated, async (req, res) => {
       }
 
       user.hasBeenReffered = true;
-      user.isWithdrawable = true;
       await user.save();
 
       
@@ -98,7 +98,8 @@ router.post('/machine4', ensureAuthenticated, async (req, res) => {
     user.machinePrice = 25000;
     user.boughtMachineDate = new Date(); 
     user.dailyMatureDate = new Date(+new Date() + 24 * 60 * 60 * 1000);
-    user.dailyPay = 0;  
+    user.dailyPay = 0; 
+    user.isWithdrawable = true;   
     user.machineReturn = 39600;
     user.counter = 1200;
     user.timesOfRun = 0;
@@ -126,7 +127,6 @@ router.post('/machine4', ensureAuthenticated, async (req, res) => {
       }
 
       user.hasBeenReffered = true;
-      user.isWithdrawable = true;
       await user.save();
 
       

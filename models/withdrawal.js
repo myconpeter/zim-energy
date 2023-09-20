@@ -35,6 +35,12 @@ date :{
         default:0
         
       },
+
+      
+isConfirmed : {
+    type : Boolean,
+    default : false
+  },
 user: [ 
     {
         type: mongoose.Schema.Types.ObjectId,

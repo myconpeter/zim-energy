@@ -4,6 +4,7 @@ const router = express.Router();
 const User = require("../models/user");
 const withdrawal = require("../models/withdrawal");
 const Deposit = require("../models/deposit");
+const Withdrawal = require('../models/withdrawal');
 
 
 
@@ -39,12 +40,29 @@ router.get('/profile',ensureAuthenticated, async(req, res)=>{
 
 // get history
 
-router.get('/history',ensureAuthenticated, (req, res, next)=>{
+router.get('/history',ensureAuthenticated, async(req, res, next)=>{
 
+
+  const userId = req.user.id; 
+  const email = req.user.email;
+
+  try {
+    const userWithdraw = await Withdrawal.find(
+      {email: email}
+      );
+
+      
+
+    res.render('history', { userWithdraw});
+  } catch (err) {
+    // Handle errors
+    console.error(err);
+    res.status(500).send('Internal Server Error');
+  }
   
 
 
-    res.render('history')
+    
   })
 
 

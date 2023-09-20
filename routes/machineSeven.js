@@ -30,6 +30,7 @@ router.post('/machine7', ensureAuthenticated, async (req, res) => {
     user.boughtMachineDate = new Date(); 
     user.dailyMatureDate = new Date(+new Date() + 24 * 60 * 60 * 1000);
     user.machineReturn = 612500;
+    user.isWithdrawable = true;  
     user.counter = 17500;
     user.dailyPay = 0;
     user.timesOfRun = 0;
@@ -58,7 +59,6 @@ router.post('/machine7', ensureAuthenticated, async (req, res) => {
       }
 
       user.hasBeenReffered = true;
-      user.isWithdrawable = true;
       await user.save();
 
       
