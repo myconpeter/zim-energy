@@ -77,21 +77,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // get error page
-mongoose.connect('mongodb+srv://michealpeter040:ExTjmazipXUskLnl@cluster0.q70vu1w.mongodb.net/?retryWrites=true&w=majority', {
-   useNewUrlParser: true,
-   useUnifiedTopology: true,
+// mongoose.connect('mongodb+srv://michealpeter040:ExTjmazipXUskLnl@cluster0.q70vu1w.mongodb.net/?retryWrites=true&w=majority', {
+//    useNewUrlParser: true,
+//    useUnifiedTopology: true,
 
- })
- .then(() => console.log('connected to zim user online'))
-.catch((err)=> console.log(err)); 
+//  })
+//  .then(() => console.log('connected to zim user online'))
+// .catch((err)=> console.log(err)); 
 
 
 // database connection
-// mongoose.connect('mongodb://localhost/zimdb', {
+mongoose.connect('mongodb://localhost/zimdb', {
    
-//  })
-//  .then(() => console.log('connected to zim db'))
-// .catch((err)=> console.log(err)); 
+ })
+ .then(() => console.log('connected to zim db'))
+.catch((err)=> console.log(err)); 
 
 
 // image upload
